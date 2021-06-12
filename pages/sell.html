@@ -29,11 +29,11 @@
         <form id="filterForm">
             <fieldset>
 
-                <label for="categoryLabel">Category:</label>
+                <label for="category">Category:</label>
                 <select id="category" name="category">
-                    <option id='latest' value="latest">Latest</option>
-                    <option  id='popular' value="popular">Populer</option>
-                    <option  id ='sales' value="sales">Sales</option>
+                    <option value="latest">Latest</option>
+                    <option value="popular">Populer</option>
+                    <option value="sales">Sales</option>
                     
                 </select>
                 <span id="productCategories"></span>
@@ -60,34 +60,47 @@
             <h2>Latest</h2>
 
             <div class="latest">
+              
 
-                <img src="" alt="" id="latestCat">
-                <h3> Product Name </h3>
+                <div id = 'img1'>
+                <h3>image1 </h3>
+                <img src=" ../img/antiques-in-bundaberg.jpg" alt="" width="30%" height="30%">
                 <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
-                    <!--
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                <p>Price : 15 JOD</p>
+                <button onClick = "addToCart()" class="sellButton"> Add to Cart </button>
+            </div>
+                <div id = 'img2'>
 
-                <img src="" alt="" width="">
-                <h3> Product Name </h3>
+                    <h3>image2 </h3>
+                <img src="../img/antiques-royalty-free-image-619763658-1551374656_720.jpg" alt=""  width="30%" height="30%">
+                
                 <p> Product description </p>
+                <p>Price : 35 JOD</p>
                 <button type="button" class="sellButton"> Add to Cart </button>
-
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
-
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
--->
             </div>
 
+                <div id = 'img3'>
+                    <h3>image3 </h3>
+                
+                <img src="../img/istockphoto-121025448-612x612.jpg" alt=""  width="30%" height="30%">
+                
+                <p> Product description </p>
+                <p>Price : 50 JOD</p>
+                <button type="button" class="sellButton"> Add to Cart </button>
+            </div>
+                <img src="" alt="">
+                <h3> Product Name </h3>
+                <p> Product description </p>
+                <button type="button" class="sellButton"> Add to Cart </button>
+
+                <img src="" alt="">
+                <h3> Product Name </h3>
+                <p> Product description </p>
+                <button type="button" class="sellButton"> Add to Cart </button>
+
+            </div>
+
+            
         </section>
 
         <section id="ctg2">
@@ -95,11 +108,6 @@
             <h2> Populer </h2>
 
             <div class="Populer">
-                <img src="" alt="" id="popularCat">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
-<!--
 
                 <img src="" alt="">
                 <h3> Product Name </h3>
@@ -120,7 +128,12 @@
                 <h3> Product Name </h3>
                 <p> Product description </p>
                 <button type="button" class="sellButton"> Add to Cart </button>
--->
+
+                <img src="" alt="">
+                <h3> Product Name </h3>
+                <p> Product description </p>
+                <button type="button" class="sellButton"> Add to Cart </button>
+
             </div>
 
         </section>
@@ -132,11 +145,6 @@
             <div class="sales">
 
 
-                <img src="" alt="" id="salesCat">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
-<!--
                 <img src="" alt="">
                 <h3> Product Name </h3>
                 <p> Product description </p>
@@ -156,7 +164,12 @@
                 <h3> Product Name </h3>
                 <p> Product description </p>
                 <button type="button" class="sellButton"> Add to Cart </button>
--->
+
+                <img src="" alt="">
+                <h3> Product Name </h3>
+                <p> Product description </p>
+                <button type="button" class="sellButton"> Add to Cart </button>
+
             </div>
 
         </section>
