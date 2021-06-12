@@ -38,46 +38,57 @@ new ProductForm('product14', 'sales', 70);
 new ProductForm('product15', 'sales', 100);
 
 //console.log(ProductForm.allProduct);
-let categoryChocies = document.getElementById('category');
+let categoryChocies = document.getElementById('category').value;
+
+let categoryLatest = document.getElementById('latest').value;
+
+let categoryPopular = document.getElementById('popular').value;
+
+let categorySales = document.getElementById('sales').value;
+
+
+
 
 function addChocies(){
     let span = document.getElementById('productCategories');
     let select = document.createElement('select');
-    if(Option.value === 'latest'){
+
+    for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
+     if(categoryLatest){
             
             span.appendChild(select);
 
-            for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-                
+           // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
+            
                 let products = document.createElement('option');
                 select.appendChild(products);
                 products.textContent = ProductForm.allProduct[i].name;
 
-            }
+            
 
-    } else if(Option.value === 'popular'){
+    } else if(categoryPopular){
 
-        for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
+       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
                 
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
 
-        }
+        //}
+    
 
 
+    } else if (categorySales) {
 
-    } else {
-
-        for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
+       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
                 
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
 
-        }
+        //}
     }
-
+    }
 
 }
 
