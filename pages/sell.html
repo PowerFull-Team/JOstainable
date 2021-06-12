@@ -29,17 +29,23 @@
         <form id="filterForm">
             <fieldset>
 
-                <label for="productNameField"> Product Name: </label>
-                <input type="text" id="productNameField" name="productNameField" pattern=".*[A-Za-z].{3,}" size="20">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="latest">Latest</option>
+                    <option value="popular">Populer</option>
+                    <option value="sales">Sales</option>
+                    
+                </select>
+                <span id="productCategories"></span>
 
-                <label for="catigoryField"> Catigory: </label>
-                <input type="text" id="catigoryField" name="catigoryField" pattern=".*[A-Za-z].{3,}" size="20">
-                
-                <label for="productTypeField"> Product Type: </label>
-                <input type="text" id="productTypeField" name="productTypeField" pattern=".*[A-Za-z].{3,}" size="20">
+                <!-- <label for="productNameField"> Product Name: </label>
+                <select id = "Name" name="productName"> -->
+                    
+
+                </select>
 
                 <label for="priceRangeField"> Price Range: </label>
-                <input type="number" id="priceRangeField" name="priceRangeField">
+                <input type="range" id="priceRangeField" name="priceRangeField" min='0' max='100' step='25'>
 
 
                 <br></br>
@@ -54,22 +60,34 @@
             <h2>Latest</h2>
 
             <div class="latest">
+              
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
+                <div id = 'img1'>
+                <h3>image1 </h3>
+                <img src=" ../img/antiques-in-bundaberg.jpg" alt="" width="30%" height="30%">
                 <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                <p>Price : 15 JOD</p>
+                <button onClick = "addToCart()" class="sellButton"> Add to Cart </button>
+            </div>
+                <div id = 'img2'>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
+                    <h3>image2 </h3>
+                <img src="../img/antiques-royalty-free-image-619763658-1551374656_720.jpg" alt=""  width="30%" height="30%">
+                
                 <p> Product description </p>
+                <p>Price : 35 JOD</p>
                 <button type="button" class="sellButton"> Add to Cart </button>
+            </div>
 
-                <img src="" alt="" width="">
-                <h3> Product Name </h3>
+                <div id = 'img3'>
+                    <h3>image3 </h3>
+                
+                <img src="../img/istockphoto-121025448-612x612.jpg" alt=""  width="30%" height="30%">
+                
                 <p> Product description </p>
+                <p>Price : 50 JOD</p>
                 <button type="button" class="sellButton"> Add to Cart </button>
-
+            </div>
                 <img src="" alt="">
                 <h3> Product Name </h3>
                 <p> Product description </p>
@@ -82,6 +100,7 @@
 
             </div>
 
+            
         </section>
 
         <section id="ctg2">
@@ -170,19 +189,21 @@
             </ul>
         </nav>
 
-        <div class="social" >
-                <a href="#" class="fa fa-facebook"></a>  
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-instagram"></a>
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
         </div>
 
         <div class="clear"></div>
         <p class="copy-rights">
-        Copyright JOstainable &copy; 2010-2021 All rights reserved.
-            </p>
-            
+            Copyright JOstainable &copy; 2010-2021 All rights reserved.
+        </p>
+
     </footer>
 
-</body>
+    <script src="../js/app.js"> </script>
+
+    </body>
 
 </html>
