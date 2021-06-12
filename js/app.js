@@ -58,8 +58,7 @@ function addChocies(){
             
             span.appendChild(select);
 
-           // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-            
+         
                 let products = document.createElement('option');
                 select.appendChild(products);
                 products.textContent = ProductForm.allProduct[i].name;
@@ -68,28 +67,36 @@ function addChocies(){
 
     } else if(categoryPopular){
 
-       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
                 
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
 
-        //}
+      
     
 
 
     } else if (categorySales) {
 
-       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-                
+      
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
 
-        //}
+      
     }
     }
 
 }
 
 addChocies();
+
+//================================Discover Page==========
+
+
+let addToCartButt=document.getElementsByClassName('sellButton');
+
+
+function addToCart(){
+
+}
