@@ -29,17 +29,23 @@
         <form id="filterForm">
             <fieldset>
 
-                <label for="productNameField"> Product Name: </label>
-                <input type="text" id="productNameField" name="productNameField" pattern=".*[A-Za-z].{3,}" size="20">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="latest">Latest</option>
+                    <option value="popular">Populer</option>
+                    <option value="sales">Sales</option>
+                    
+                </select>
+                <span id="productCategories"></span>
 
-                <label for="catigoryField"> Catigory: </label>
-                <input type="text" id="catigoryField" name="catigoryField" pattern=".*[A-Za-z].{3,}" size="20">
-                
-                <label for="productTypeField"> Product Type: </label>
-                <input type="text" id="productTypeField" name="productTypeField" pattern=".*[A-Za-z].{3,}" size="20">
+                <!-- <label for="productNameField"> Product Name: </label>
+                <select id = "Name" name="productName"> -->
+                    
+
+                </select>
 
                 <label for="priceRangeField"> Price Range: </label>
-                <input type="number" id="priceRangeField" name="priceRangeField">
+                <input type="range" id="priceRangeField" name="priceRangeField" min='0' max='100' step='25'>
 
 
                 <br></br>
@@ -170,19 +176,21 @@
             </ul>
         </nav>
 
-        <div class="social" >
-                <a href="#" class="fa fa-facebook"></a>  
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-instagram"></a>
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
         </div>
 
         <div class="clear"></div>
         <p class="copy-rights">
-        Copyright JOstainable &copy; 2010-2021 All rights reserved.
-            </p>
-            
+            Copyright JOstainable &copy; 2010-2021 All rights reserved.
+        </p>
+
     </footer>
 
-</body>
+    <script src="../js/app.js"> </script>
+
+    </body>
 
 </html>
