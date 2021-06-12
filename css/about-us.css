@@ -14,7 +14,7 @@ header h1{
 }
 #linksNav {
     float: right;
-    /* padding-top: 20px; */
+  
 }
 #linksNav ul li {
     display: inline-block;
