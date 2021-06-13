@@ -43,9 +43,7 @@ new ProductForm('product15', 'sales', 100, "salesCat");
 // let categoryChocies = document.getElementById('category').value;
 /*
 let categoryLatest = document.getElementById('latest').value;
-
 let categoryPopular = document.getElementById('popular').value;
-
 let categorySales = document.getElementById('sales').value;*/
 // let arrCat=[];
 
@@ -64,53 +62,39 @@ function selectCat()
 {
     let proCat = document.getElementById('productCategories');
     let selectedCateg = document.createElement('select');
-
    
 }
-
 function addChocies(){
     let span = document.getElementById('productCategories');
     let select = document.createElement('select');
-
     for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
      if(categoryLatest){
             
             span.appendChild(select);
-
            // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
             
                 let products = document.createElement('option');
                 select.appendChild(products);
                 products.textContent = ProductForm.allProduct[i].name;
-
             
-
     } else if(categoryPopular){
-
        // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
                 
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
-
         //}
     
-
-
     } else if (categorySales) {
-
        // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
                 
             let products = document.createElement('option');
             select.appendChild(products);
             products.textContent = ProductForm.allProduct[i].name;
-
         //}
     }
     }
-
 }
-
 addChocies();
 */
 
@@ -170,4 +154,3 @@ function updateStorage(){
     // }
     console.log(total);
     }
-  
