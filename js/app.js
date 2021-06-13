@@ -4,24 +4,26 @@
 // function constructer to get all data from the form .. 
 
 
-
-function ProductForm(name, category, price, id) {
+function ProductForm(name, category, price, CatClass, path) {
 
     this.name = name;
     this.category = category;
     this.price = price;
-    this.idCat= id;
+    this.CatClass= CatClass;
+    this.path=path;
+
     ProductForm.allProduct.push(this);
+    updateStorage();
 
 }
-
+// 
 // array that save every products inside it .. 
 ProductForm.allProduct = [];
 
 
-new ProductForm('product1', 'latest', 15, "latestCat");
-new ProductForm('product2', 'latest', 35, "latestCat");
-new ProductForm('product3', 'latest', 50, "latestCat");
+new ProductForm('product1', 'latest', 15, "latestCat",'../img/antiques-in-bundaberg.jpg');
+new ProductForm('product2', 'latest', 35, "latestCat",'../img/antiques-royalty-free-image-619763658-1551374656_720.jpg');
+new ProductForm('product3', 'latest', 50, "latestCat",'../img/istockphoto-121025448-612x612.jpg');
 new ProductForm('product4', 'latest', 70, "latestCat");
 new ProductForm('product5', 'latest', 100, "latestCat");
 
@@ -38,25 +40,25 @@ new ProductForm('product14', 'sales', 70, "salesCat");
 new ProductForm('product15', 'sales', 100, "salesCat");
 
 //console.log(ProductForm.allProduct);
-let categoryChocies = document.getElementById('category').value;
+// let categoryChocies = document.getElementById('category').value;
 /*
 let categoryLatest = document.getElementById('latest').value;
 
 let categoryPopular = document.getElementById('popular').value;
 
 let categorySales = document.getElementById('sales').value;*/
-let arrCat=[];
+// let arrCat=[];
 
-let valueCat=categoryChocies.selectElement.options[categoryChocies.selectedIndex].value;// get selected option value
-let textCat=categoryChocies.options[categoryChocies.selectedIndex].text;
+// let valueCat=categoryChocies.selectElement.options[categoryChocies.selectedIndex].value;// get selected option value
+// let textCat=categoryChocies.options[categoryChocies.selectedIndex].text;
 
-for (let z=0;z<categoryChocies.selectedIndex;z++){
-if (categoryChocies.selectedIndex == ProductForm.allProduct[z].id)
-{
-  arrCat.push(ProductForm.allProduct[z].name);
-}
-}
-console.log(arrCat);
+// for (let z=0;z<categoryChocies.selectedIndex;z++){
+// if (categoryChocies.selectedIndex == ProductForm.allProduct[z].id)
+// {
+//   arrCat.push(ProductForm.allProduct[z].name);
+// }
+// }
+// console.log(arrCat);
 /*
 function selectCat()
 {
@@ -111,3 +113,61 @@ function addChocies(){
 
 addChocies();
 */
+
+function updateStorage(){
+
+    let arrayString = JSON.stringify(ProductForm.allProduct);
+    
+  
+    localStorage.setItem('Products', arrayString);
+    console.log(arrayString); 
+  
+  }
+
+
+  function getproducts (){
+
+   
+    let data = localStorage.getItem('Products');
+  
+    let productsData = JSON.parse(data);
+    console.log(productsData);
+  
+    if(productsData !== null){
+  
+       ProductForm.allProducts = productsData;
+      
+      }
+     
+  
+  }
+
+  getproducts();
+
+  
+  
+  let btn = document.getElementsByClassName('sellButton');
+  let total = 0;
+  let price = 0;
+//   for( let i = 0 ; i < btn.length ; i++){
+    // btn.addEventListener('click' , addToCart );
+
+//   }
+
+
+
+    function addToCart (event){
+    //   for(let i = 0 ; i < btn.length ; i++){
+      
+         btn.addEventListener('onClick',addToCart);
+        // if(event.target.id == "img1"){
+            price = ProductForm.allProduct[0].price;
+            total += price;
+            // } 
+        
+            
+    
+    // }
+    console.log(total);
+    }
+  
