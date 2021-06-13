@@ -31,24 +31,21 @@
 
                 <label for="category">Category:</label>
                 <select id="category" name="category">
-                    <option id='latest' value="latest">Latest</option>
-                    <option  id='popular' value="popular">Populer</option>
-                    <option  id ='sales' value="sales">Sales</option>
-                    
+                    <option value="latest">Latest</option>
+                    <option value="Reular">Reuler</option>
+                    <option value="sales">Sales</option>
+
                 </select>
                 <span id="productCategories"></span>
 
                 <!-- <label for="productNameField"> Product Name: </label>
                 <select id = "Name" name="productName"> -->
-                    
+
 
                 </select>
 
                 <label for="priceRangeField"> Price Range: </label>
                 <input type="range" id="priceRangeField" name="priceRangeField" min='0' max='100' step='25'>
-
-
-                <br></br>
 
                 <input type="submit" id="pressButton" value="Filter">
 
@@ -57,72 +54,142 @@
 
         <section id="ctg1">
 
-            <h2>Latest</h2>
+            <h2> Unique </h2>
 
             <div class="latest">
-                
+
+
                 <div id='img1'>
-                <h3> image1 </h3>
-                <img src="../img/Antiques-in-Bundaberg.jpg" alt="" width='30%' height= '30%'>
-                <p> Product description </p>
-                <p> Price: <span> 100 </span></p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+
+                    <h3> Camera </h3>
+                    <img src=" ../img/camera1.jpeg" alt="camera" width="30%" height="30%">
+
+                    <p> This camera was made in 1980 to commemorate the Moscow Olympic Games. </p>
+                    <p>Price : 15 JOD</p>
+
+                    <button onClick="addToCart()" class="sellButton"> Add to Cart </button>
+
                 </div>
-                
-                <h3> image2</h3>
-                <img src="../img/antiques-royalty-free-image-619763658-1551374656.jpg" alt="" width='30%' height= '30%'>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
 
-                <h3> image3 </h3>
-                <img src="../img/istockphoto-121025448-612x612.jpg" alt="" width='30%' height= '30%'>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                <div id='img2'>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <h3> Compass </h3>
+                    <img src="../img/compass.jpeg" alt="" width="30%" height="30%">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <p> Vintage Navigation compass Pocket Watch Style Case </p>
+                    <p>Price : 35 JOD</p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id='img3'>
+
+                    <h3> Phonograph </h3>
+                    <img src="../img/gramophone.jpg" alt="" width="30%" height="30%">
+
+                    <p> Antique Phonograph </p>
+                    <p>Price : 50 JOD</p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img4">
+
+                    <h3> Radio </h3>
+                    <img src="../img/radio1.jpg" alt="" width="30%" height="30%">
+
+                    <p> Antique Radio </p>
+                    <p> Price: 70 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img5">
+
+                    <h3> Typewriter </h3>
+                    <img src="../img/typeWriter2.jpg" alt="" width="30%" height="30%">
+
+                    <p> Anitque typewriter since world war II </p>
+                    <p> Price: 100 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
 
             </div>
+
 
         </section>
 
         <section id="ctg2">
 
-            <h2> Populer </h2>
+            <h2> Eco-friendly </h2>
 
-            <div class="Populer">
+            <div class="popular">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                <div id="img1Re">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <h3> Green Bag </h3>
+                    <img src="../img/greenBag1.jpeg" alt="green-bag" width="30%" height="30%">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <p> A resusable bag for your shopping </p>
+                    <p> Price: 15 JOD </p>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <button type="button" class="sellButton"> Add to Cart </button>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                </div>
+
+                <div id="img2Re">
+
+                    <h3> Recycling Trash </h3>
+                    <img src="../img/greenBox.jpeg" alt="green-trash-boxes" width="30%" height="30%">
+
+                    <p> A set of 4-boxes for paper, glass, plastic, & metal trash </p>
+                    <p> Price: 35 JOD</p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img3Re">
+
+                    <h3> Recycled Notebook </h3>
+                    <img src="../img/notebook.jpeg" alt="notebook" width="30%" height="30%">
+
+                    <p> A set of recycled strings and notebook </p>
+                    <p> Price: 50 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img4Re">
+
+                    <h3> Toothbrush </h3>
+                    <img src="../img/toothbrush.jpeg" alt="toothbrush" width="30%" height="30%">
+
+                    <p> A set of 5 recycled based toothbrushes and recycled bath accessories </p>
+                    <p> Price: 70 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img5Re">
+
+
+                    <h3> Bottle Light </h3>
+                    <img src="../img/waterBottleLight.jpg" alt="bubble-lights" width="30%" height="30%">
+
+                    <p> A set of 3-recycled bottles used with lighting art </p>
+                    <p> Price: 100 JOD</p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
 
             </div>
 
@@ -130,35 +197,70 @@
 
         <section id="ctg3">
 
-            <h2>Sales</h2>
+            <h2>Handmade Fashion</h2>
 
             <div class="sales">
 
+                <div id="img1Sales">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <h3> Baby Set </h3>
+                    <img src="../img/babyClothing.jpeg" alt="baby-clothes" width="30%" height="30%">
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <p> A set of 3-pieces for youe kid </p>
+                    <p> Price: 15 JOD </p>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                    <button type="button" class="sellButton"> Add to Cart </button>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                </div>
 
-                <img src="" alt="">
-                <h3> Product Name </h3>
-                <p> Product description </p>
-                <button type="button" class="sellButton"> Add to Cart </button>
+                <div id="img2Sales">
+
+
+                    <h3> Handmade Bag </h3>
+                    <img src="../img/bag.jpeg" alt="bag" width="30%" height="30%">
+
+                    <p> A handmade bedouin style bag </p>
+                    <p> Price: 35 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img3Sales">
+
+                    <h3> Handmade Bracelet </h3>
+                    <img src="../img/bracelet.jpeg" alt="bracelet" width="30%" height="30%">
+
+                    <p> A handmade colorful bracelet </p>
+                    <p> Price: 50 JOD</p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img4Sales">
+
+                    <h3> Handmade Scarf </h3>
+                    <img src="../img/scarf.jpeg" alt="scarf" width="30%" height="30%">
+
+                    <p> Handmade wool scarf </p>
+                    <p> Price: 70 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+
+                </div>
+
+                <div id="img5Sales">
+
+                    <h3> Product Name </h3>
+                    <img src="../img/socks.jpeg" alt="socks" width="30%" height="30%">
+
+                    <p> Handmade wool socks </p>
+                    <p> Price: 100 JOD </p>
+
+                    <button type="button" class="sellButton"> Add to Cart </button>
+                    
+                </div>
 
             </div>
 
