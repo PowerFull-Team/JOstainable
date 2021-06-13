@@ -4,12 +4,11 @@
 // function constructer to get all data from the form .. 
 
 
-function ProductForm(name, category, price, CatClass, path) {
+function ProductForm(name, category, price,  path) {
 
     this.name = name;
     this.category = category;
     this.price = price;
-    this.CatClass= CatClass;
     this.path=path;
 
     ProductForm.allProduct.push(this);
@@ -21,82 +20,29 @@ function ProductForm(name, category, price, CatClass, path) {
 ProductForm.allProduct = [];
 
 
-new ProductForm('product1', 'latest', 15, "latestCat",'../img/antiques-in-bundaberg.jpg');
-new ProductForm('product2', 'latest', 35, "latestCat",'../img/antiques-royalty-free-image-619763658-1551374656_720.jpg');
-new ProductForm('product3', 'latest', 50, "latestCat",'../img/istockphoto-121025448-612x612.jpg');
-new ProductForm('product4', 'latest', 70, "latestCat");
-new ProductForm('product5', 'latest', 100, "latestCat");
+new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg');
+new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg');
+new ProductForm('Phonograph', 'Unique', 50, '../img/gramophone.jpg');
+new ProductForm('Radio', 'Unique', 70, '../img/radio1.jpg');
+new ProductForm('Typewriter', 'Unique', 100, '../img/typeWriter2.jpg');
 
-new ProductForm('product6', 'popular', 15, "popularCat");
-new ProductForm('product7', 'popular', 35, "popularCat");
-new ProductForm('product8', 'popular', 50, "popularCat");
-new ProductForm('product9', 'popular', 70, "popularCat");
-new ProductForm('product10', 'popular', 100, "popularCat");
+new ProductForm('Green Bag ', 'Eco-friendly', 15, '../img/greenBag1.jpeg');
+new ProductForm('Recycling Trash', 'Eco-friendly', 35, '../img/greenBox.jpeg');
+new ProductForm('Recycled Notebook', 'Eco-friendly', 50, '../img/notebook.jpeg');
+new ProductForm('Toothbrush', 'Eco-friendly', 70, '../img/toothbrush.jpeg');
+new ProductForm('Bottle Light',' Eco-friendly', 100, '../img/waterBottleLight.jpg');
 
-new ProductForm('product11', 'sales', 15, "salesCat");
-new ProductForm('product12', 'sales', 35, "salesCat");
-new ProductForm('product13', 'sales', 50, "salesCat");
-new ProductForm('product14', 'sales', 70, "salesCat");
-new ProductForm('product15', 'sales', 100, "salesCat");
+new ProductForm('Baby Set', 'Handmade Fashion', 15, '../img/babyClothing.jpeg');
+new ProductForm('Handmade Bag', 'Handmade Fashion', 35, '../img/bag.jpeg');
+new ProductForm('Handmade Bracelet ', 'Handmade Fashion', 50, '../img/bracelet.jpeg');
+new ProductForm('Handmade Scarf', 'Handmade Fashion', 70, '../img/scarf.jpeg');
+new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg');
 
-//console.log(ProductForm.allProduct);
-// let categoryChocies = document.getElementById('category').value;
-/*
-let categoryLatest = document.getElementById('latest').value;
-let categoryPopular = document.getElementById('popular').value;
-let categorySales = document.getElementById('sales').value;*/
-// let arrCat=[];
+// let categoryLatest = document.getElementById('latest').value;
+// let categoryPopular = document.getElementById('popular').value;
+// let categorySales = document.getElementById('sales').value;
 
-// let valueCat=categoryChocies.selectElement.options[categoryChocies.selectedIndex].value;// get selected option value
-// let textCat=categoryChocies.options[categoryChocies.selectedIndex].text;
 
-// for (let z=0;z<categoryChocies.selectedIndex;z++){
-// if (categoryChocies.selectedIndex == ProductForm.allProduct[z].id)
-// {
-//   arrCat.push(ProductForm.allProduct[z].name);
-// }
-// }
-// console.log(arrCat);
-/*
-function selectCat()
-{
-    let proCat = document.getElementById('productCategories');
-    let selectedCateg = document.createElement('select');
-   
-}
-function addChocies(){
-    let span = document.getElementById('productCategories');
-    let select = document.createElement('select');
-    for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-     if(categoryLatest){
-            
-            span.appendChild(select);
-           // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-            
-                let products = document.createElement('option');
-                select.appendChild(products);
-                products.textContent = ProductForm.allProduct[i].name;
-            
-    } else if(categoryPopular){
-       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-                
-            let products = document.createElement('option');
-            select.appendChild(products);
-            products.textContent = ProductForm.allProduct[i].name;
-        //}
-    
-    } else if (categorySales) {
-       // for (let i = 0 ; i < ProductForm.allProduct.length ; i++){
-                
-            let products = document.createElement('option');
-            select.appendChild(products);
-            products.textContent = ProductForm.allProduct[i].name;
-        //}
-    }
-    }
-}
-addChocies();
-*/
 
 function updateStorage(){
 
@@ -104,53 +50,135 @@ function updateStorage(){
     
   
     localStorage.setItem('Products', arrayString);
-    console.log(arrayString); 
-  
-  }
+      }
 
 
   function getproducts (){
 
-   
-    let data = localStorage.getItem('Products');
+   let data = localStorage.getItem('Products');
   
-    let productsData = JSON.parse(data);
+   let productsData = JSON.parse(data);
     console.log(productsData);
   
     if(productsData !== null){
   
        ProductForm.allProducts = productsData;
-      
+     }
       }
-     
-  
-  }
-
-  getproducts();
-
-  
-  
-  let btn = document.getElementsByClassName('sellButton');
-  let total = 0;
-  let price = 0;
-//   for( let i = 0 ; i < btn.length ; i++){
-    // btn.addEventListener('click' , addToCart );
-
-//   }
+      getproducts ();
 
 
+let arrUnique = ['Camera','Compass','Phonograph','Radio','Typewriter'];
+let arrEco = ['Green Bag','Recycling Trash','Recycled Notebook','Toothbrush','Bottle Light'];
+let arrHand = ['Baby Set','Handmade Bag','Handmade Bracelet','Handmade Scarf','Socks'];
 
-    function addToCart (event){
-    //   for(let i = 0 ; i < btn.length ; i++){
-      
-         btn.addEventListener('onClick',addToCart);
-        // if(event.target.id == "img1"){
-            price = ProductForm.allProduct[0].price;
-            total += price;
-            // } 
+let parent = document.getElementById('category');
+
+let choices = document.getElementById('productCategories');
+
+let category = ProductForm.allProduct.category;
+
+ parent.addEventListener('click', fillNextSelect);
+ let select = document.createElement('select');
+    choices.appendChild(select);
+
+
+ function fillNextSelect(event){
+
+
+    select.textContent = '';
+
+    for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
+console.log('before if',event.target.value);
+        if(event.target.value === 'unique' ){
             
+            let option = document.createElement('option');
+            select.appendChild(option);
+            option.textContent = arrUnique[i];
+            console.log('after if',event.target.value);
+            
+            
+        } else if ( event.target.value === 'ecoFriendly'){
+
+            let option = document.createElement('option');
+            select.appendChild(option);
+            option.textContent =arrEco[i];
+            
+        } else if ( event.target.value === 'handmadeFashion'){
+
+            let option = document.createElement('option');
+            select.appendChild(option);
+            option.textContent =arrHand[i];
+            
+        } else {
+            let option = document.createElement('option');
+            select.appendChild(option);
+            option.textContent = ProductForm.allProduct[i].name;
+
+
+        }
     
-    // }
-    console.log(total);
+      
     }
+    
+
+    
+
+}
+
+
+// ================================== ( button function) ==================================================
+
+
+
+let btn = document.getElementsByClassName('sellButton');
+console.log(btn);
+
+for(let i = 0 ; i < btn.length ; i++){
+ btn[i].addEventListener('click' , addToCart);
+
+}
+
+function addToCart(event){
+if(event.target.value === 'add'){
+  
+alert('added');
+
+
+}
+
+
+
+}
+
+// ================================= ( render Function) =================================================
+
+function render(){
+
+   
+
+
+
+
+
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+  
+  
+  
+  
