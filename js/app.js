@@ -31,7 +31,7 @@ new ProductForm('Green Bag ', 'Eco-friendly', 15, '../img/greenBag1.jpeg','A res
 new ProductForm('Recycling Trash', 'Eco-friendly', 35, '../img/greenBox.jpeg',' A set of 4-boxes for paper, glass, plastic, & metal trash ');
 new ProductForm('Recycled Notebook', 'Eco-friendly', 50, '../img/notebook.jpeg','A set of recycled strings and notebook ');
 new ProductForm('Toothbrush', 'Eco-friendly', 70, '../img/toothbrush.jpeg','A set of 5 recycled based toothbrushes and recycled bath accessories ');
-new ProductForm('Bottle Light',' Eco-friendly', 100, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
+new ProductForm('Bottle Light','Eco-friendly', 100, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
 
 new ProductForm('Baby Set', 'Handmade Fashion', 15, '../img/babyClothing.jpeg','A set of 3-pieces for youe kid ');
 new ProductForm('Handmade Bag', 'Handmade Fashion', 35, '../img/bag.jpeg','A handmade bedouin style bag ');
