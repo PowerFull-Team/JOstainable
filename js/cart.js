@@ -1,14 +1,17 @@
 'use strict'
 
+//let arr1=[];
+
 let cartList = document.getElementById('cart');
 cartList.addEventListener('click', removeItemFromCart);
 let cart;
 
 // let Cart = function (items) {
-
 //     // this.items is an array of CartItem instances.
 //     this.items = items;
 //   };
+
+let cartItems=[];
 
 let Cart = function (name, category, price, path){
     this.name= name;
@@ -16,47 +19,46 @@ let Cart = function (name, category, price, path){
     this.price=price;
     this.path=path;
 
-    arr1.push(this);
+    Cart.allCart.push(this);
+    cartItems.push(this);
 }
 
+Cart.allCart=[];
 
-function loadCart() {
-  //  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    // cart = new Cart(cartItems);
+new Cart('product1', 'latest', 15,'../img/antiques-in-bundaberg.jpg');
+new Cart('product2', 'latest', 35,'../img/antiques-royalty-free-image-619763658-1551374656_720.jpg');
 
-   new Cart('product1', 'latest', 15,'../img/antiques-in-bundaberg.jpg');
+// save to local Storage
+localStorage.setItem('cart',JSON.stringify(Cart.allCart));
 
-   new Cart('product2', 'latest', 35,'../img/antiques-royalty-free-image-619763658-1551374656_720.jpg');
-
-  
+function loadCart(){
+    cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+   //cart = new Cart(cartItems);
+   console.log(cartItems);
+   console.log(cart);  
 }
+loadCart();
 
-
-function clearCart() {
-
-    let parent = document.getElementsByTagName('tbody')[0];
-    parent.textContent = '';
-}
-
-let arr1=[];
+// render cart
 function showCart() {
+
     let parent = document.getElementsByTagName('tbody')[0];
 
-    for (let i = 0; i < arr1.length; i++) {
+    for (let i = 0; i <Cart.allCart.length; i++) {
         let tr = document.createElement('tr');
         parent.appendChild(tr);
 
         let imageSrc = document.createElement('td');
-        imageSrc.textContent = arr1[i].path;
+        imageSrc.textContent = Cart.allCart[i].path;
         tr.appendChild(imageSrc);
 
         
         let productTd = document.createElement('td');
-        productTd.textContent = arr1[i].name;
+        productTd.textContent = Cart.allCart[i].name;
         tr.appendChild(productTd);
 
         let priceTd = document.createElement('td');
-        priceTd.textContent = arr1[i].price;
+        priceTd.textContent = Cart.allCart[i].price;
         tr.appendChild(priceTd);
 
         let deleteTd = document.createElement('td');
@@ -65,24 +67,44 @@ function showCart() {
 
     }
 }
+showCart();
 
-
-function renderCart() {
-    loadCart();
-    clearCart();
-    showCart();
-}
+// remove item
 
 function removeItemFromCart(event) {
-
   if (event.target.textContent === 'X') {
-    cart.removeItem(event.target.id);
+    cartList.removeItem(event.target.id);
     console.log(event.target.textContent); 
     }
       
-  localStorage.setItem('cart',JSON.stringify(cart.items));
+  localStorage.setItem('cart',JSON.stringify(Cart.allCart));
       renderCart();
-  
   }
+ 
+// function clearCart() {
+
+//     let parent = document.getElementsByTagName('tbody')[0];
+//     parent.textContent = '';
+// }
+
+
+// Cart.prototype.saveToLocalStorage = function () {
+//    // save the contents of the cart to localStorage
+//     localStorage.setItem('cart',JSON.stringify(this.items))
+//   };
   
-  renderCart();
+Cart.prototype.removeItem = function (item) {
+    //remove one item from the cart.
+    // // Note: You will have to decide what kind of parameter to pass in here!
+    this.items.splice(item, 1);
+    //  localStorage.removeItem(item);
+  };
+  
+
+
+// function renderCart() {
+//     loadCart();
+//     clearCart();
+//     showCart();
+// }
+
