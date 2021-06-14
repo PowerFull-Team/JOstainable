@@ -2,7 +2,11 @@
 
 
 // function constructer to get all data from the form .. 
-
+let counter = 0;
+ let father = document.getElementById('father');
+ let count = document.getElementById('count');
+ father.appendChild(count);
+ counter = count;
 
 function ProductForm(name, category, price,  path, discreption) {
 
@@ -11,10 +15,11 @@ function ProductForm(name, category, price,  path, discreption) {
     this.price = price;
     this.path=path;
     this.discreption=discreption;
+    this.quantity = 0;
    
 
     ProductForm.allProduct.push(this);
-     updateStorage();
+    //  updateStorage();
 
 }
 // 
@@ -40,47 +45,61 @@ new ProductForm('Handmade Bracelet ', 'Handmade Fashion', 50, '../img/bracelet.j
 new ProductForm('Handmade Scarf', 'Handmade Fashion', 70, '../img/scarf.jpeg','Handmade wool scarf ');
 new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg','Handmade wool socks');
 
-// let categoryLatest = document.getElementById('latest').value;
-// let categoryPopular = document.getElementById('popular').value;
-// let categorySales = document.getElementById('sales').value;
 
 
 
-function updateStorage(){
 
-    let arrayString = JSON.stringify(ProductForm.allProduct);
+// function updateStorage(){
+
+//     let arrayString = JSON.stringify(ProductForm.allProduct);
     
   
-    localStorage.setItem('Products', arrayString);
-      }
+//     localStorage.setItem('Products', arrayString);
+//       }
 
 
-  function getproducts (){
+//   function getproducts (){
 
-   let data = localStorage.getItem('Products');
+//    let data = localStorage.getItem('Products');
   
-   let productsData = JSON.parse(data);
-    console.log(productsData);
+//    let productsData = JSON.parse(data);
+//     console.log(productsData);
   
-    if(productsData !== null){
+//     if(productsData !== null){
   
-       ProductForm.allProducts = productsData;
-     }
-      }
+//        ProductForm.allProducts = productsData;
+//      }
+//       }
      
 
 
-let arrUnique = ['Camera','Compass','Phonograph','Radio','Typewriter'];
-let arrEco = ['Green Bag','Recycling Trash','Recycled Notebook','Toothbrush','Bottle Light'];
-let arrHand = ['Baby Set','Handmade Bag','Handmade Bracelet','Handmade Scarf','Socks'];
+// let arrUnique = ['Camera','Compass','Phonograph','Radio','Typewriter'];
+// let arrEco = ['Green Bag','Recycling Trash','Recycled Notebook','Toothbrush','Bottle Light'];
+// let arrHand = ['Baby Set','Handmade Bag','Handmade Bracelet','Handmade Scarf','Socks'];
 
+let arrunique = [];
+let arrEco = [];
+let arrHand = [];
+
+for(let i = 0 ; i < ProductForm.allProduct.length ; i++){
+
+    if(ProductForm.allProduct[i].category == 'Unique'){
+        arrunique.push(ProductForm.allProduct[i].name);
+    } else if(ProductForm.allProduct[i].category == 'Eco-friendly'){
+        arrEco.push(ProductForm.allProduct[i].name);
+    }else if (ProductForm.allProduct[i].category == 'Handmade Fashion'){
+        arrHand.push(ProductForm.allProduct[i].name);
+    }
+}
+
+console.log(arrunique);
 let parent = document.getElementById('category');
 
 let choices = document.getElementById('productCategories');
 
 
 
-// let category = ProductForm.allProduct.category;
+
 
  parent.addEventListener('click', fillNextSelect);
  let select = document.createElement('select');
@@ -95,11 +114,11 @@ let choices = document.getElementById('productCategories');
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
 console.log('before if',event.target.value);
-        if(event.target.value === 'unique' ){
+        if(event.target.value === 'unique'  ){
             
             let option = document.createElement('option');
             select.appendChild(option);
-            option.textContent = arrUnique[i];
+            option.textContent = arrunique[i];
             console.log('after if',event.target.value);
             
             
@@ -132,7 +151,6 @@ console.log('before if',event.target.value);
 }
 
 
-// ================================== ( button function) ==================================================
 
 
 // ================================= ( render Function) =================================================
@@ -141,7 +159,7 @@ console.log('before if',event.target.value);
 let cart = [];
 
 function renderImages(){
-   alert('hi');
+//    alert('hi');
     let firstDiv= document.getElementById('uniqueImages');
     let first = document.getElementById('firstCategory');
     let secound = document.getElementById('secoundCategory');
@@ -167,7 +185,7 @@ function renderImages(){
 
 
   h2Hand.textContent = 'Handmade Fashion';
-  let butt = document.createElement('button');
+//   let butt = document.createElement('button');
 
   
 
@@ -202,12 +220,33 @@ function renderImages(){
 
         butt.addEventListener('click', submit);
         function submit(event){
+            alert('Added To Cart');
 
-            if(event.target.textContent === 'addToCart'){
+            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
 
+
+                ProductForm.allProduct[i].quantity++;
+                
+
+            }
+                
+
+              else {
+                ProductForm.allProduct[i].quantity = 1;
 
                 cart.push(ProductForm.allProduct[i]);
+
+                count.textContent = ` : ${Number(cart.length)}  `;
+
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+              
+
                 console.log(cart);
+              }
+              
             }
          
 
@@ -216,9 +255,9 @@ function renderImages(){
       
 
 
-        }
+        
 
-      
+    
        
 
        if (ProductForm.allProduct[i].category==='Eco-friendly'){
@@ -250,15 +289,34 @@ function renderImages(){
 
         butt.addEventListener('click', submit);
         function submit(event){
+            alert('Added To Cart');
 
-            if(event.target.textContent === 'addToCart'){
+            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
 
+
+                ProductForm.allProduct[i].quantity++;
+                
+
+            }
+                
+
+              else {
+                ProductForm.allProduct[i].quantity = 1;
 
                 cart.push(ProductForm.allProduct[i]);
-                console.log(cart);
-            }
-         
 
+                count.textContent = ` : ${Number(cart.length)}  `;
+
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+               
+
+                console.log(cart);
+              }
+         
+            
 
         }
        
@@ -294,13 +352,33 @@ function renderImages(){
         butt.textContent = 'addToCart';
         butt.addEventListener('click', submit);
         function submit(event){
+            alert('Added To Cart');
 
-            if(event.target.textContent === 'addToCart'){
+            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
 
+
+                ProductForm.allProduct[i].quantity++;
+                
+
+            }
+                
+
+              else {
+                ProductForm.allProduct[i].quantity = 1;
 
                 cart.push(ProductForm.allProduct[i]);
+
+                count.textContent = ` : ${Number(cart.length)}  `;
+
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+                
                 console.log(cart);
-            }
+              }
+
+         
          
 
 
@@ -309,24 +387,39 @@ function renderImages(){
 
        
        }
+    }
 
-       
-        }
+    
+
+} 
+        
 
 
    
-    }
-
+    
 renderImages();
 
 
 
+  function getproducts (){
+
+   let data = localStorage.getItem('Products');
+  
+   let productsData = JSON.parse(data);
+    console.log(productsData);
+  
+    if(productsData !== null){
+  
+     cart = productsData;
+     }
+      }
+
+      getproducts();
 
 
 
 
-
-getproducts ();
+// getproducts ();
 
 
 
