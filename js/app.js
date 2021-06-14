@@ -1,5 +1,7 @@
 'use strict';
 
+let table=document.getElementById('cart');
+let butt= document.createElement('button');
 
 // function constructer to get all data from the form .. 
 let counter = 0;
@@ -7,6 +9,8 @@ let counter = 0;
  let count = document.getElementById('count');
  father.appendChild(count);
  counter = count;
+
+
 
 function ProductForm(name, category, price,  path, discreption) {
 
@@ -22,7 +26,8 @@ function ProductForm(name, category, price,  path, discreption) {
     //  updateStorage();
 
 }
-// 
+
+
 // array that save every products inside it .. 
 ProductForm.allProduct = [];
 
@@ -52,6 +57,8 @@ let arrunique = [];
 let arrEco = [];
 let arrHand = [];
 
+
+     
 for(let i = 0 ; i < ProductForm.allProduct.length ; i++){
 
     if(ProductForm.allProduct[i].category == 'Unique'){
@@ -78,12 +85,11 @@ let choices = document.getElementById('productCategories');
 
  
  function fillNextSelect(event){
-
-
     select.textContent = '';
 
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
+
 console.log('before if',event.target.value);
         if(event.target.value === 'unique'  ){
             
@@ -91,6 +97,10 @@ console.log('before if',event.target.value);
             select.appendChild(option);
             option.textContent = arrunique[i];
             console.log('after if',event.target.value);
+
+
+     
+
             
             
         } else if ( event.target.value === 'ecoFriendly'){
@@ -125,7 +135,6 @@ console.log('before if',event.target.value);
 
 
 // ================================= ( render Function) =================================================
-
 
 let cart = [];
 
@@ -442,6 +451,9 @@ renderImages();
 
       getproducts();
       getQuantity ();
+
+
+
 
 
 
