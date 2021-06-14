@@ -1,9 +1,9 @@
 'use strict';
 
+let table=document.getElementById('cart');
+let butt= document.createElement('button');
 
 // function constructer to get all data from the form .. 
-
-
 function ProductForm(name, category, price,  path, discreption) {
 
     this.name = name;
@@ -16,7 +16,8 @@ function ProductForm(name, category, price,  path, discreption) {
     updateStorage();
 
 }
-// 
+
+
 // array that save every products inside it .. 
 ProductForm.allProduct = [];
 
@@ -31,7 +32,7 @@ new ProductForm('Green Bag ', 'Eco-friendly', 15, '../img/greenBag1.jpeg','A res
 new ProductForm('Recycling Trash', 'Eco-friendly', 35, '../img/greenBox.jpeg',' A set of 4-boxes for paper, glass, plastic, & metal trash ');
 new ProductForm('Recycled Notebook', 'Eco-friendly', 50, '../img/notebook.jpeg','A set of recycled strings and notebook ');
 new ProductForm('Toothbrush', 'Eco-friendly', 70, '../img/toothbrush.jpeg','A set of 5 recycled based toothbrushes and recycled bath accessories ');
-new ProductForm('Bottle Light',' Eco-friendly', 100, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
+new ProductForm('Bottle Light','Eco-friendly', 100, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
 
 new ProductForm('Baby Set', 'Handmade Fashion', 15, '../img/babyClothing.jpeg','A set of 3-pieces for youe kid ');
 new ProductForm('Handmade Bag', 'Handmade Fashion', 35, '../img/bag.jpeg','A handmade bedouin style bag ');
@@ -85,13 +86,11 @@ let category = ProductForm.allProduct.category;
 
 
  function fillNextSelect(event){
-
-
     select.textContent = '';
 
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
-console.log('before if',event.target.value);
+      console.log('before if',event.target.value);
         if(event.target.value === 'unique' ){
             
             let option = document.createElement('option');
@@ -277,6 +276,9 @@ function filteration(event){
 
   
 }
+
+
+
 
 
 
