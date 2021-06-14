@@ -60,7 +60,7 @@ function updateStorage(){
    let data = localStorage.getItem('Products');
   
    let productsData = JSON.parse(data);
-    console.log(productsData);
+    //console.log(productsData);
   
     if(productsData !== null){
   
@@ -94,13 +94,13 @@ let choices = document.getElementById('productCategories');
 
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
-console.log('before if',event.target.value);
+//console.log('before if',event.target.value);
         if(event.target.value === 'unique' ){
             
             let option = document.createElement('option');
             select.appendChild(option);
             option.textContent = arrUnique[i];
-            console.log('after if',event.target.value);
+           // console.log('after if',event.target.value);
             
             
         } else if ( event.target.value === 'ecoFriendly'){
@@ -136,7 +136,6 @@ console.log('before if',event.target.value);
 
 
 // ================================= ( render Function) =================================================
-
 
 let cart = [];
 
