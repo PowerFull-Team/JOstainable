@@ -58,7 +58,7 @@ function updateStorage(){
    let data = localStorage.getItem('Products');
   
    let productsData = JSON.parse(data);
-    console.log(productsData);
+    //console.log(productsData);
   
     if(productsData !== null){
   
@@ -90,13 +90,13 @@ let category = ProductForm.allProduct.category;
 
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
-console.log('before if',event.target.value);
+//console.log('before if',event.target.value);
         if(event.target.value === 'unique' ){
             
             let option = document.createElement('option');
             select.appendChild(option);
             option.textContent = arrUnique[i];
-            console.log('after if',event.target.value);
+           // console.log('after if',event.target.value);
             
             
         } else if ( event.target.value === 'ecoFriendly'){
@@ -133,7 +133,7 @@ console.log('before if',event.target.value);
 
 
 let btn = document.getElementsByClassName('sellButton');
-console.log(btn);
+//console.log(btn);
 
 for(let i = 0 ; i < btn.length ; i++){
  btn[i].addEventListener('click' , addToCart);

@@ -1,8 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* The Body */
+html,
+body {
+  font-family: 'Acme', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  background-color: #f0fdff;
+  position: relative;
+  }
+
 .fa {
     padding: 15px;
     font-size: 30px;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     text-align: center;
     text-decoration: none;
     margin: 2px 2px;
@@ -25,3 +43,230 @@
     background: #125688;
     color: white;
   }
+
+  /* Header */
+
+  header {
+    font-family: 'Acme', sans-serif;
+    height: 800px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://www.partoo.co/wp-content/uploads/2019/03/drive-to-store-min.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    }
+  
+  header div {
+    padding: 25px;
+  }
+  
+  /* Title */
+  .title-logo {
+    color: #fff;
+    float: left;
+    text-transform: uppercase;
+  }
+  .title-logo span,
+  .title-logo--footer span {
+    margin: 0 5px;
+    color: #f56969;
+    transition: transform 0.25s;
+    
+  }
+  
+  /* Menu right side */
+  .main-nav {
+    float: right;
+  }
+  .main-nav-list {
+    list-style: none;
+  }
+  
+  .main-nav-item {
+    display: inline-block;
+    margin: 0 7px;
+  }
+  
+  .main-nav-item a:link,
+  .main-nav-item a:visited {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 7px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.25s;
+  }
+  
+  .main-nav-item a:hover,
+  .main-nav-item a:active {
+    border-bottom: 2px solid #f0ec00 ;
+  }
+  
+  /* Background Image with big Text */
+  .heading00 {
+    font-family: 'Londrina Solid', cursive;
+    margin-top: 6%;
+    text-align: center;
+    color: #eeeded;
+    font-size: 850%;
+     word-spacing: 5px;
+  }
+  
+  .heading01 {
+    font-family: 'Londrina Solid', cursive;
+    line-height: 0.9;
+    margin-top: 0%;
+    text-align: center;
+    color: #eeeded;
+    font-size: 1100%;
+    letter-spacing: 5px
+  }
+  
+  .heading02 {
+    line-height: 1.8;
+    font-family: 'Londrina Solid', cursive;
+    margin-top: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ef6ff1 ;
+    letter-spacing: 5px;
+    font-size: 1050%;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 620px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .button:hover {
+    background-color: #3e8e41;
+  }
+
+
+  .aboutProject-bar {
+   background-color: #eefbff;
+    height: 100vh;
+    padding: 40px 0 60px 0;
+  }
+  .aboutProject-bar {
+    color: rgb(0, 56, 102);
+    text-align: center;
+    font-size: 250%;
+    font-weight: 200;
+    margin: 4% 0 5% 0;
+  }
+  
+  .section-heading00 span {
+    margin: 0 5px;
+    color: #1a768d;
+    transition: transform 0.3s;
+  }
+  
+  .section-heading00::after {
+    content: "";
+    display: block;
+    margin: 30px auto 0 auto;
+    height: 2px;
+    width: 150px;
+  }
+
+   .prof-info{
+    background-color: #fdf1fd;
+    width: 1150px;
+    color:#3271ad ;
+    border: 3px solid #3271ad;
+    padding: 50px;
+    margin-left: 15%;
+    margin-top: 2%;
+    font-size: 25px;
+    align-content: center;
+    line-height: 1.8;
+    border-radius: 15px;
+
+
+}
+
+/* footer */
+footer {
+  width: 100%;
+  padding: 25px 0 10px 0;
+  background-color: #202020  ;
+  color: #fff;
+}
+
+.title-logo--footer {
+  float: right;
+  margin-left: 25px;
+  text-transform: uppercase;
+}
+
+.footer-nav {
+  float: left;
+  margin-right: 25px;
+}
+
+.footer-nav-list {
+  list-style: none;
+}
+.footer-nav-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.footer-nav-item a:link,
+.footer-nav-item a:visited {
+  text-decoration: none;
+  color: #fefaec;
+  transition: opacity 0.25s;
+  text-transform: uppercase;
+}
+
+.footer-nav-item a:hover,
+.footer-nav-item a:active {
+  opacity: 0.75;
+}
+
+.copy-rights,
+.contactus-bar {
+  font-size: 80%;
+  font-weight: 200;
+}
+
+.copy-rights {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.contactus-bar {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contactus-bar-list {
+  list-style: none;
+}
+.social-bar{
+  margin-top: 60px;
+  margin-left: 85%;
+  position: absolute;
+}
+footer{
+  position: relative;
+  height: 150px;
+}
+
+span{
+  color: #f56969;
+}
