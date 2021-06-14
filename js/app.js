@@ -14,7 +14,6 @@ function ProductForm(name, category, price,  path, discreption) {
    
 
     ProductForm.allProduct.push(this);
-     updateStorage();
 
 }
 // 
@@ -46,13 +45,15 @@ new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg','Handmade 
 
 
 
-function updateStorage(){
+// function updateStorage(){
 
-    let arrayString = JSON.stringify(ProductForm.allProduct);
+//     let arrayString = JSON.stringify(cart);
     
   
-    localStorage.setItem('Products', arrayString);
-      }
+//     localStorage.setItem('Products', arrayString);
+//       }
+
+//       updateStorage();
 
 
   function getproducts (){
@@ -99,7 +100,7 @@ console.log('before if',event.target.value);
             
             let option = document.createElement('option');
             select.appendChild(option);
-            option.textContent = arrUnique[i];
+            option.textContent = arrUnique[i]
             console.log('after if',event.target.value);
             
             
@@ -141,7 +142,7 @@ console.log('before if',event.target.value);
 let cart = [];
 
 function renderImages(){
-   alert('hi');
+   
     let firstDiv= document.getElementById('uniqueImages');
     let first = document.getElementById('firstCategory');
     let secound = document.getElementById('secoundCategory');
@@ -208,8 +209,12 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
                 console.log(cart);
+
+                let arrayString = JSON.stringify(cart);
+                localStorage.setItem('Products', arrayString);
             }
-         
+            
+
 
 
         }
@@ -256,6 +261,11 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
                 console.log(cart);
+
+               let arrayString = JSON.stringify(cart);
+               localStorage.setItem('Products', arrayString);
+
+           
             }
          
 
@@ -300,6 +310,11 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
                 console.log(cart);
+
+                let arrayString = JSON.stringify(cart);
+                localStorage.setItem('Products', arrayString);
+                
+
             }
          
 
@@ -318,10 +333,6 @@ function renderImages(){
     }
 
 renderImages();
-
-
-
-
 
 
 
