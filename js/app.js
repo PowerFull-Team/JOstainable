@@ -48,35 +48,6 @@ new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg','Handmade 
 
 
 
-
-// function updateStorage(){
-
-//     let arrayString = JSON.stringify(ProductForm.allProduct);
-    
-  
-//     localStorage.setItem('Products', arrayString);
-//       }
-
-
-//   function getproducts (){
-
-//    let data = localStorage.getItem('Products');
-  
-//    let productsData = JSON.parse(data);
-//     console.log(productsData);
-  
-//     if(productsData !== null){
-  
-//        ProductForm.allProducts = productsData;
-//      }
-//       }
-     
-
-
-// let arrUnique = ['Camera','Compass','Phonograph','Radio','Typewriter'];
-// let arrEco = ['Green Bag','Recycling Trash','Recycled Notebook','Toothbrush','Bottle Light'];
-// let arrHand = ['Baby Set','Handmade Bag','Handmade Bracelet','Handmade Scarf','Socks'];
-
 let arrunique = [];
 let arrEco = [];
 let arrHand = [];
@@ -159,7 +130,7 @@ console.log('before if',event.target.value);
 let cart = [];
 
 function renderImages(){
-//    alert('hi');
+
     let firstDiv= document.getElementById('uniqueImages');
     let first = document.getElementById('firstCategory');
     let secound = document.getElementById('secoundCategory');
@@ -185,7 +156,6 @@ function renderImages(){
 
 
   h2Hand.textContent = 'Handmade Fashion';
-//   let butt = document.createElement('button');
 
   
 
@@ -200,7 +170,9 @@ function renderImages(){
 
         let image= document.createElement('img');
         first.appendChild(image);
-        let Src = image.src = ProductForm.allProduct[i].path;
+         
+        image.src = ProductForm.allProduct[i].path;
+        let Src = image.src;
         image.textContent = Src;
         
         
@@ -222,10 +194,20 @@ function renderImages(){
         function submit(event){
             alert('Added To Cart');
 
+            
+       console.log(ProductForm.allProduct[i]);
+       console.log(cart);
             if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
-
-
+           
+                console.log(ProductForm.allProduct);
                 ProductForm.allProduct[i].quantity++;
+
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+
+                setQuantity();
                 
 
             }
@@ -236,7 +218,7 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length)}  `;
+                count.textContent = ` : ${Number(cart.length) * ProductForm.allProduct[i].quantity} `;
 
                 let arrayString = JSON.stringify(cart);
     
@@ -246,7 +228,9 @@ function renderImages(){
 
                 console.log(cart);
               }
+
               
+         
             }
          
 
@@ -269,9 +253,9 @@ function renderImages(){
 
         let image= document.createElement('img');
         secound.appendChild(image);
-        let Src = image.src = ProductForm.allProduct[i].path;
+        image.src = ProductForm.allProduct[i].path;
+        let Src = image.src;
         image.textContent = Src;
-        
         
         let p= document.createElement('p');
         secound.appendChild(p);
@@ -295,6 +279,12 @@ function renderImages(){
 
 
                 ProductForm.allProduct[i].quantity++;
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+
+                setQuantity();
                 
 
             }
@@ -315,6 +305,8 @@ function renderImages(){
 
                 console.log(cart);
               }
+
+           
          
             
 
@@ -333,7 +325,8 @@ function renderImages(){
 
         let image= document.createElement('img');
         third.appendChild(image);
-        let Src = image.src = ProductForm.allProduct[i].path;
+        image.src = ProductForm.allProduct[i].path;
+        let Src = image.src;
         image.textContent = Src;
         
         
@@ -358,6 +351,12 @@ function renderImages(){
 
 
                 ProductForm.allProduct[i].quantity++;
+                let arrayString = JSON.stringify(cart);
+    
+  
+                localStorage.setItem('Products', arrayString);
+
+                setQuantity();
                 
 
             }
@@ -380,13 +379,14 @@ function renderImages(){
 
          
          
-
-
         }
     
 
        
        }
+
+       
+
     }
 
     
@@ -406,7 +406,6 @@ renderImages();
    let data = localStorage.getItem('Products');
   
    let productsData = JSON.parse(data);
-    console.log(productsData);
   
     if(productsData !== null){
   
@@ -414,12 +413,35 @@ renderImages();
      }
       }
 
+
+      function setQuantity(){
+
+        let arrayString = JSON.stringify(ProductForm.allProduct);
+        
+      
+        localStorage.setItem('Items', arrayString);
+          }
+    
+    
+      function getQuantity (){
+    
+       let data = localStorage.getItem('Items');
+      
+       let productsData = JSON.parse(data);
+        console.log(productsData);
+      
+        if(productsData !== null){
+      
+           ProductForm.allProducts = productsData;
+         }
+          }
+
       getproducts();
+      getQuantity ();
 
 
 
 
-// getproducts ();
 
 
 
