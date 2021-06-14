@@ -1,6 +1,7 @@
 'use strict';
-
-let table=document.getElementById('cart');
+let cart = [];
+let names=[];
+// let table=document.getElementById('cart');
 let butt= document.createElement('button');
 
 // function constructer to get all data from the form .. 
@@ -19,7 +20,7 @@ function ProductForm(name, category, price,  path, discreption) {
     this.price = price;
     this.path=path;
     this.discreption=discreption;
-    this.quantity = 0;
+    // this.quantity =0;
    
 
     ProductForm.allProduct.push(this);
@@ -30,7 +31,8 @@ function ProductForm(name, category, price,  path, discreption) {
 
 // array that save every products inside it .. 
 ProductForm.allProduct = [];
-
+let productsData;
+// if(!JSON.parse(localStorage.getItem('Products'))){
 
 new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'This camera was made in 1980 to commemorate the Moscow Olympic Games.');
 new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg', ' Vintage Navigation compass Pocket Watch Style Case ');
@@ -70,7 +72,6 @@ for(let i = 0 ; i < ProductForm.allProduct.length ; i++){
     }
 }
 
-console.log(arrunique);
 let parent = document.getElementById('category');
 
 let choices = document.getElementById('productCategories');
@@ -90,14 +91,17 @@ let choices = document.getElementById('productCategories');
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
 
-console.log('before if',event.target.value);
         if(event.target.value === 'unique'  ){
             
             let option = document.createElement('option');
             select.appendChild(option);
+<<<<<<< HEAD
             option.textContent = arrUnique[i]
 
             console.log('after if',event.target.value);
+=======
+            option.textContent = arrunique[i];
+>>>>>>> 0cd653c5963fdc7eb5743f8041883721f1e92628
 
 
      
@@ -137,7 +141,7 @@ console.log('before if',event.target.value);
 
 // ================================= ( render Function) =================================================
 
-let cart = [];
+
 
 function renderImages(){
     let firstDiv= document.getElementById('uniqueImages');
@@ -203,39 +207,44 @@ function renderImages(){
         function submit(event){
             alert('Added To Cart');
 
-            
-       console.log(ProductForm.allProduct[i]);
-       console.log(cart);
-            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
            
-                console.log(ProductForm.allProduct);
-                ProductForm.allProduct[i].quantity++;
-
-                let arrayString = JSON.stringify(cart);
-    
+            
+      
+            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
+           
+              for (let j=0; j<cart.length; j++){
+                if (cart[j].name==(ProductForm.allProduct[i]).name){
+                  cart[j].quantity++;
   
-                localStorage.setItem('Products', arrayString);
-                
-
-                setQuantity();
+                  let arrayString = JSON.stringify(cart);
+      
+    
+                  localStorage.setItem('Products', arrayString);
+                 
+  
+                  setQuantity();
+                  names.push( ProductForm.allProduct[i].name)
+                }
+              }
                 
 
             }
                 
 
               else {
-                ProductForm.allProduct[i].quantity = 1;
+                ProductForm.allProduct[i]['quantity']=1
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length)} `;
+                count.textContent = ` : (${ Number(cart.length)}) `;
 
                 let arrayString = JSON.stringify(cart);
     
   
                 localStorage.setItem('Products', arrayString);
+                names.push( ProductForm.allProduct[i].name)
+
               
-                console.log(cart);
               }
 
               
@@ -283,39 +292,48 @@ function renderImages(){
 
         butt.addEventListener('click', submit);
         function submit(event){
+         
             alert('Added To Cart');
-
-            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
-
-
-                ProductForm.allProduct[i].quantity++;
-                let arrayString = JSON.stringify(cart);
+            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
+              // console.log('the item that you added', ProductForm.allProduct[i].name)
+              for (let j=0; j<cart.length; j++){
+                  // console.log(cart[j],  ProductForm.allProduct[i])
+                  if (cart[j].name==(ProductForm.allProduct[i]).name){
+                    // console.log('cart',cart)
+                    cart[j].quantity++;
+                    // console.log('not first time', cart[j].quantity)
     
-  
-                localStorage.setItem('Products', arrayString);
-               
+                    let arrayString = JSON.stringify(cart);
+        
+      
+                    localStorage.setItem('Products', arrayString);
+                   
+    
+                    setQuantity();
+                    names.push( ProductForm.allProduct[i].name)
+                  }
+                }
+          
 
-                setQuantity();
-                
 
             }
                 
 
               else {
-                ProductForm.allProduct[i].quantity = 1;
+                ProductForm.allProduct[i]['quantity']=1
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length)}  `;
-
+                count.textContent = ` : (${ Number(cart.length )}) `;
+                
                 let arrayString = JSON.stringify(cart);
     
   
                 localStorage.setItem('Products', arrayString);
                 
-               
+                names.push( ProductForm.allProduct[i].name)
 
-                console.log(cart);
+
               }
 
            
@@ -359,36 +377,44 @@ function renderImages(){
         function submit(event){
             alert('Added To Cart');
 
-            if(event.target.textContent === 'addToCart' && cart.includes(ProductForm.allProduct[i])){
+            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
 
-
-                ProductForm.allProduct[i].quantity++;
-                let arrayString = JSON.stringify(cart);
-    
+              for (let j=0; j<cart.length; j++){
+                if (cart[j].name==(ProductForm.allProduct[i]).name){
+                  cart[j].quantity++;
   
-                localStorage.setItem('Products', arrayString);
-                
-
-                setQuantity();
+                  let arrayString = JSON.stringify(cart);
+      
+    
+                  localStorage.setItem('Products', arrayString);
+                 
+  
+                  setQuantity();
+                  names.push( ProductForm.allProduct[i].name)
+                }
+              }
                 
 
             }
                 
 
               else {
-                ProductForm.allProduct[i].quantity = 1;
+                ProductForm.allProduct[i]['quantity']=1
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length)}  `;
+                count.textContent = ` : (${ Number(cart.length )}) `;
 
-                let arrayString = JSON.stringify(cart);
+            
+               let arrayString = JSON.stringify(cart);
     
   
                 localStorage.setItem('Products', arrayString);
+
+                names.push( ProductForm.allProduct[i].name)
+
               
                 
-                console.log(cart);
               }
 
          
@@ -414,7 +440,6 @@ function renderImages(){
 renderImages();
 
 
-
   function getproducts (){
 
 //    let data = localStorage.getItem('Products');
@@ -428,9 +453,10 @@ renderImages();
  
       cart = JSON.parse(localStorage.getItem('Products')) || [];
 
+
       for( let i =0 ; i < cart.length ; i++){
          new ProductForm(cart[i].name, cart[i].category, cart[i].price,  cart[i].path, cart[i].discreption);
-
+        names.push(cart[i].name)
       }
       }
 
@@ -448,8 +474,7 @@ renderImages();
     
        let data = localStorage.getItem('Items');
       
-       let productsData = JSON.parse(data);
-        console.log(productsData);
+        productsData = JSON.parse(data);
       
         if(productsData !== null){
       
