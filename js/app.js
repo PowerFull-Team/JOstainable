@@ -215,6 +215,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
 
                 setQuantity();
                 
@@ -227,14 +228,13 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length) * ProductForm.allProduct[i].quantity} `;
+                count.textContent = ` : ${Number(cart.length)} `;
 
                 let arrayString = JSON.stringify(cart);
     
   
                 localStorage.setItem('Products', arrayString);
               
-
                 console.log(cart);
               }
 
@@ -292,6 +292,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+               
 
                 setQuantity();
                 
@@ -310,6 +311,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
                
 
                 console.log(cart);
@@ -364,6 +366,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
 
                 setQuantity();
                 
@@ -382,6 +385,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+              
                 
                 console.log(cart);
               }
@@ -412,14 +416,21 @@ renderImages();
 
   function getproducts (){
 
-   let data = localStorage.getItem('Products');
+//    let data = localStorage.getItem('Products');
   
-   let productsData = JSON.parse(data);
+//    let productsData = JSON.parse(data);
   
-    if(productsData !== null){
+//     if(productsData !== null){
   
-     cart = productsData;
-     }
+//      cart = productsData;
+//      }
+ 
+      cart = JSON.parse(localStorage.getItem('Products')) || [];
+
+      for( let i =0 ; i < cart.length ; i++){
+         new ProductForm(cart[i].name, cart[i].category, cart[i].price,  cart[i].path, cart[i].discreption);
+
+      }
       }
 
 
