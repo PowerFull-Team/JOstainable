@@ -5,3 +5,51 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+img{
+  width: 30%;
+  height: 30%;
+}
+
+.title-logo {
+  color: #fff;
+  float: left;
+  text-transform: uppercase;
+}
+.title-logo span,
+.title-logo--footer span {
+  margin: 0 5px;
+  color: #f56969;
+  transition: transform 0.25s;
+  
+}
+
+
+/* Menu right side */
+.main-nav {
+  float: right;
+}
+.main-nav-list {
+  list-style: none;
+}
+
+.main-nav-item {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.main-nav-item a:link,
+.main-nav-item a:visited {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 7px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.25s;
+}
+
+.main-nav-item a:hover,
+.main-nav-item a:active {
+  border-bottom: 2px solid #f0ec00 ;
+}
