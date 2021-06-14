@@ -206,6 +206,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
 
                 setQuantity();
                 
@@ -218,14 +219,13 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : ${Number(cart.length) * ProductForm.allProduct[i].quantity} `;
+                count.textContent = ` : ${Number(cart.length)} `;
 
                 let arrayString = JSON.stringify(cart);
     
   
                 localStorage.setItem('Products', arrayString);
               
-
                 console.log(cart);
               }
 
@@ -283,6 +283,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+               
 
                 setQuantity();
                 
@@ -301,6 +302,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
                
 
                 console.log(cart);
@@ -355,6 +357,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+                
 
                 setQuantity();
                 
@@ -373,6 +376,7 @@ function renderImages(){
     
   
                 localStorage.setItem('Products', arrayString);
+              
                 
                 console.log(cart);
               }
