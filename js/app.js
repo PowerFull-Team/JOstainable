@@ -1,9 +1,9 @@
 'use strict';
 
+let table=document.getElementById('cart');
+let butt= document.createElement('button');
 
 // function constructer to get all data from the form .. 
-
-
 function ProductForm(name, category, price,  path, discreption) {
 
     this.name = name;
@@ -17,7 +17,8 @@ function ProductForm(name, category, price,  path, discreption) {
      updateStorage();
 
 }
-// 
+
+
 // array that save every products inside it .. 
 ProductForm.allProduct = [];
 
@@ -88,13 +89,11 @@ let choices = document.getElementById('productCategories');
 
  
  function fillNextSelect(event){
-
-
     select.textContent = '';
 
     for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
         
-//console.log('before if',event.target.value);
+
         if(event.target.value === 'unique' ){
             
             let option = document.createElement('option');
@@ -326,6 +325,9 @@ renderImages();
 
 
 getproducts ();
+
+
+
 
 
 
