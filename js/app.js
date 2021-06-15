@@ -1,4 +1,16 @@
 'use strict';
+
+function incript(val){
+  let newOne = '';
+  for(let i=0; i<val.length;i++){
+    if(val[i]===' '){
+      continue;
+    }
+    newOne+=val[i];
+  }
+  return newOne;
+  }
+
 let cart = [];
 let names=[];
 // let table=document.getElementById('cart');
@@ -52,6 +64,9 @@ new ProductForm('Handmade Bracelet ', 'Handmade Fashion', 50, '../img/bracelet.j
 new ProductForm('Handmade Scarf', 'Handmade Fashion', 70, '../img/scarf.jpeg','Handmade wool scarf ');
 new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg','Handmade wool socks');
 
+let oldVersionArray = [... ProductForm.allProduct];
+
+console.log(oldVersionArray);
 
 
 
@@ -71,6 +86,7 @@ for(let i = 0 ; i < ProductForm.allProduct.length ; i++){
         arrHand.push(ProductForm.allProduct[i].name);
     }
 }
+//=========================== Filter ==========================================  
 
 let parent = document.getElementById('category');
 
@@ -82,48 +98,55 @@ let choices = document.getElementById('productCategories');
 
  parent.addEventListener('click', fillNextSelect);
  let select = document.createElement('select');
+ select.addEventListener('change',itemFilter)
     choices.appendChild(select);
 
- 
+ function itemFilter(event){
+  document.getElementById(event.target.value).scrollIntoView();
+ }
  function fillNextSelect(event){
     select.textContent = '';
 
-    for( let i = 0 ; i < ProductForm.allProduct.length ; i++){
-        
+
+    let count = -1
+    for( let i = 0 ; i < oldVersionArray.length ; i++){
+        count++;
 
         if(event.target.value === 'unique'  ){
+          if(arrunique.length === count){
+            break;
+          }
             
             let option = document.createElement('option');
             select.appendChild(option);
-<<<<<<< HEAD
-            option.textContent = arrUnique[i]
-
-            console.log('after if',event.target.value);
-=======
+            option.value = incript(arrunique[i]);
             option.textContent = arrunique[i];
->>>>>>> 0cd653c5963fdc7eb5743f8041883721f1e92628
-
-
-     
-
-            
+          
             
         } else if ( event.target.value === 'ecoFriendly'){
+          if(arrEco.length === count){
+            break;
+          }
 
             let option = document.createElement('option');
             select.appendChild(option);
+            option.value = incript(arrEco[i]);
             option.textContent =arrEco[i];
             
         } else if ( event.target.value === 'handmadeFashion'){
-
+          if(arrHand.length === count){
+            break;
+          }
             let option = document.createElement('option');
             select.appendChild(option);
+            option.value = incript(arrHand[i]);
             option.textContent =arrHand[i];
             
         } else {
             let option = document.createElement('option');
             select.appendChild(option);
-            option.textContent = ProductForm.allProduct[i].name;
+            option.value = incript(oldVersionArray[i].name);
+            option.textContent = oldVersionArray[i].name;
 
 
         }
@@ -149,6 +172,7 @@ function renderImages(){
     let secound = document.getElementById('secoundCategory');
     let third = document.getElementById('ThirdCategory');
     
+    
      firstDiv.appendChild(first);
  
     let h2unique = document.createElement('h2');
@@ -171,18 +195,21 @@ function renderImages(){
   h2Hand.textContent = 'Handmade Fashion';
 
   
-
+    console.log(ProductForm.allProduct);
     for(let i=0; i<ProductForm.allProduct.length; i++){
-
+      // let newDiv = document.createElement('div');
        if (ProductForm.allProduct[i].category==='Unique'){
-       
-
+        let newDiv = document.createElement('div');
+        newDiv.setAttribute('class','unique');
+        newDiv.setAttribute('id',incript(ProductForm.allProduct[i].name));
+        
         let h3= document.createElement('h3');
-        first.appendChild(h3);
+        
+        newDiv.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;
 
         let image= document.createElement('img');
-        first.appendChild(image);
+        newDiv.appendChild(image);
          
         image.src = ProductForm.allProduct[i].path;
         let Src = image.src;
@@ -190,19 +217,19 @@ function renderImages(){
         
         
         let p= document.createElement('p');
-        first.appendChild(p);
+        newDiv.appendChild(p);
         p.textContent = ProductForm.allProduct[i].discreption;
 
          
         let price= document.createElement('p');
-        first.appendChild(price);
+        newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 
          
         let butt= document.createElement('button');
-        first.appendChild(butt);
+        newDiv.appendChild(butt);
         butt.textContent = 'addToCart';
-
+        first.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
             alert('Added To Cart');
@@ -215,6 +242,8 @@ function renderImages(){
               for (let j=0; j<cart.length; j++){
                 if (cart[j].name==(ProductForm.allProduct[i]).name){
                   cart[j].quantity++;
+              
+
   
                   let arrayString = JSON.stringify(cart);
       
@@ -228,15 +257,14 @@ function renderImages(){
               }
                 
 
-            }
-                
-
-              else {
+            } else {
                 ProductForm.allProduct[i]['quantity']=1
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : (${ Number(cart.length)}) `;
+                counter = cart.length
+                count.textContent = ` : (${counter}) `;
+                
 
                 let arrayString = JSON.stringify(cart);
     
@@ -265,31 +293,33 @@ function renderImages(){
 
        if (ProductForm.allProduct[i].category==='Eco-friendly'){
        
-
+        let newDiv = document.createElement('div');
+        newDiv.setAttribute('class','ecoFriendly');
+        newDiv.setAttribute('id',incript(ProductForm.allProduct[i].name));
         let h3= document.createElement('h3');
-        secound.appendChild(h3);
+        newDiv.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;
 
         let image= document.createElement('img');
-        secound.appendChild(image);
+        newDiv.appendChild(image);
         image.src = ProductForm.allProduct[i].path;
         let Src = image.src;
         image.textContent = Src;
         
         let p= document.createElement('p');
-        secound.appendChild(p);
+        newDiv.appendChild(p);
         p.textContent = ProductForm.allProduct[i].discreption;
 
          
         let price= document.createElement('p');
-        secound.appendChild(price);
+        newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 
          
         let butt= document.createElement('button');
-        secound.appendChild(butt);
+        newDiv.appendChild(butt);
         butt.textContent = 'addToCart';
-
+        secound.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
          
@@ -301,6 +331,9 @@ function renderImages(){
                   if (cart[j].name==(ProductForm.allProduct[i]).name){
                     // console.log('cart',cart)
                     cart[j].quantity++;
+                   
+                  
+
                     // console.log('not first time', cart[j].quantity)
     
                     let arrayString = JSON.stringify(cart);
@@ -314,29 +347,31 @@ function renderImages(){
                   }
                 }
           
-
-
+                
+                
             }
-                
-
-              else {
+            
+            
+            else {
                 ProductForm.allProduct[i]['quantity']=1
-
-                cart.push(ProductForm.allProduct[i]);
-
-                count.textContent = ` : (${ Number(cart.length )}) `;
                 
+                cart.push(ProductForm.allProduct[i]);
+                
+                counter = cart.length
+                count.textContent = ` : (${counter}) `;
+                
+             
                 let arrayString = JSON.stringify(cart);
-    
-  
+                
+                
                 localStorage.setItem('Products', arrayString);
                 
                 names.push( ProductForm.allProduct[i].name)
 
 
-              }
-
-           
+            }
+            
+            
          
             
 
@@ -348,31 +383,34 @@ function renderImages(){
 
        if (ProductForm.allProduct[i].category==='Handmade Fashion'){
      
-
+        let newDiv = document.createElement('div');
+        newDiv.setAttribute('class','handmadeFashion');
+        newDiv.setAttribute('id',incript(ProductForm.allProduct[i].name));
         let h3= document.createElement('h3');
-        third.appendChild(h3);
+        newDiv.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;
 
         let image= document.createElement('img');
-        third.appendChild(image);
+        newDiv.appendChild(image);
         image.src = ProductForm.allProduct[i].path;
         let Src = image.src;
         image.textContent = Src;
         
         
         let p= document.createElement('p');
-        third.appendChild(p);
+        newDiv.appendChild(p);
         p.textContent = ProductForm.allProduct[i].discreption;
 
          
         let price= document.createElement('p');
-        third.appendChild(price);
+        newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 
          
         let butt= document.createElement('button');
-        third.appendChild(butt);
+        newDiv.appendChild(butt);
         butt.textContent = 'addToCart';
+        third.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
             alert('Added To Cart');
@@ -382,6 +420,8 @@ function renderImages(){
               for (let j=0; j<cart.length; j++){
                 if (cart[j].name==(ProductForm.allProduct[i]).name){
                   cart[j].quantity++;
+            
+                
   
                   let arrayString = JSON.stringify(cart);
       
@@ -402,9 +442,14 @@ function renderImages(){
                 ProductForm.allProduct[i]['quantity']=1
 
                 cart.push(ProductForm.allProduct[i]);
-
-                count.textContent = ` : (${ Number(cart.length )}) `;
-
+                
+                
+                
+                counter = cart.length
+                count.textContent = ` : (${counter}) `;
+                
+              
+                
             
                let arrayString = JSON.stringify(cart);
     
@@ -415,16 +460,15 @@ function renderImages(){
 
               
                 
-              }
-
-         
-         
+            }
+            
+            
         }
+        
+        
+        
+    }
     
-
-       
-       }
-
        
 
     }
@@ -439,7 +483,35 @@ function renderImages(){
     
 renderImages();
 
-
+let filter = document.getElementById('category');
+filter.addEventListener('change',filterCategories)
+function filterCategories(event){
+  let value = event.target.value;
+  if(value === 'unique'){
+    
+    document.querySelector('#firstCategory').style.display = "block";
+    document.querySelector('#secoundCategory').style.display = "none";
+    document.querySelector('#ThirdCategory').style.display = "none";
+  }
+  else if(value === 'ecoFriendly'){
+    
+    document.querySelector('#firstCategory').style.display = "none";
+    document.querySelector('#secoundCategory').style.display = "block";
+    document.querySelector('#ThirdCategory').style.display = "none";
+  }
+  if(value === 'handmadeFashion'){
+    
+    document.querySelector('#firstCategory').style.display = "none";
+    document.querySelector('#secoundCategory').style.display = "none";
+    document.querySelector('#ThirdCategory').style.display = "block";
+  }
+  if(value === 'all'){
+    
+    document.querySelector('#firstCategory').style.display = "block";
+    document.querySelector('#secoundCategory').style.display = "block";
+    document.querySelector('#ThirdCategory').style.display = "block";
+  }  
+}
   function getproducts (){
 
 //    let data = localStorage.getItem('Products');
