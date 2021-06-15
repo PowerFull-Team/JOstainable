@@ -55,5 +55,18 @@ function ExchangeConfirm(event){
 
    localStorage.setItem('newProducts',JSON.stringify(NewProductForm.allProduct));
 
+   Swal.fire({
+    title: 'YOUR PRODUCT ADDED, & READY TO EXCHANGE',
+    width: 600,
+    padding: '3em',
+    background: '#fff url(/images/trees.png)',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `
+  })
+
 
 }

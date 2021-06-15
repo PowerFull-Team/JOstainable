@@ -118,12 +118,13 @@ body {
     text-align: center;
     color: #eeeded;
     font-size: 850%;
-     word-spacing: 5px;
+    word-spacing: 5px;
   }
   
   .heading01 {
     font-family: 'Londrina Solid', cursive;
     line-height: 0.9;
+    margin-bottom: 2%;
     margin-top: 0%;
     text-align: center;
     color: #eeeded;
@@ -153,11 +154,10 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
-    margin: 4px 15px;
+    font-size: 40px;
     cursor: pointer;
-    margin-left: 620px;
-    margin-top: 20px;
+    margin-left: 40%;
+    margin-top: 1%;
     border-radius: 20px;
   }
   .button:hover {
@@ -168,14 +168,14 @@ body {
   .aboutProject-bar {
    background-color: #eefbff;
     height: 100vh;
-    padding: 40px 0 60px 0;
+    padding: 3% 0 4% 0;
   }
   .aboutProject-bar {
     color: rgb(0, 56, 102);
     text-align: center;
     font-size: 250%;
     font-weight: 200;
-    margin: 4% 0 5% 0;
+    margin: 3% 0 4% 0;
 
   }
   
@@ -195,13 +195,12 @@ body {
   }
 
    .prof-info{
-    background-color: #fdf1fd;
+    background-color: #f5fafc;
     width: 1150px;
     color:#3271ad ;
     border: 3px solid #3271ad;
     padding: 50px;
-    margin-left: 13%;
-    margin-top: 2%;
+    margin: auto;
     font-size: 25px;
     align-content: center;
     line-height: 1.8;
