@@ -105,7 +105,7 @@ footer{
 }
  header {
     font-family: 'Acme', sans-serif;
-    height: 800px;
+    height: 80px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url("https://www.careeraddict.com/uploads/article/58721/illustration-group-people-team-meeting.jpg");
     background-position: center;
