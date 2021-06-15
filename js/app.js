@@ -1,16 +1,14 @@
 'use strict';
 let cart = [];
 let names=[];
-let bigTotal = 0;
-// let table=document.getElementById('cart');
+
 let butt= document.createElement('button');
 
-// function constructer to get all data from the form .. 
 let counter = 0;
  let father = document.getElementById('father');
  let count = document.getElementById('count');
- father.appendChild(count);
- counter = count;
+ console.log('HI')
+
 
 
 
@@ -21,19 +19,16 @@ function ProductForm(name, category, price,  path, discreption) {
     this.price = price;
     this.path=path;
     this.discreption=discreption;
-    // this.quantity =0;
    
 
     ProductForm.allProduct.push(this);
-    //  updateStorage();
+   
 
 }
 
 
-// array that save every products inside it .. 
 ProductForm.allProduct = [];
 let productsData;
-// if(!JSON.parse(localStorage.getItem('Products'))){
 
 new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'This camera was made in 1980 to commemorate the Moscow Olympic Games.');
 new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg', ' Vintage Navigation compass Pocket Watch Style Case ');
@@ -201,7 +196,8 @@ function renderImages(){
 
         butt.addEventListener('click', submit);
         function submit(event){
-            alert('Added To Cart');
+            Swal.fire('Added To Cartr')
+
 
            
             
@@ -241,14 +237,9 @@ function renderImages(){
 
               
               }
-///////// 
-              // for (let k=0; k<cart.length; k++){
-              //   subTotal = cart[k].quantity;
-              //   console.log('total :' , subTotal)
-              // }
-              bigTotal ++;
 
-              count.textContent = bigTotal;
+           
+              updateCounter()
 
               
          
@@ -297,13 +288,9 @@ function renderImages(){
          
             alert('Added To Cart');
             if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
-              // console.log('the item that you added', ProductForm.allProduct[i].name)
               for (let j=0; j<cart.length; j++){
-                  // console.log(cart[j],  ProductForm.allProduct[i])
                   if (cart[j].name==(ProductForm.allProduct[i]).name){
-                    // console.log('cart',cart)
                     cart[j].quantity++;
-                    // console.log('not first time', cart[j].quantity)
     
                     let arrayString = JSON.stringify(cart);
         
@@ -326,7 +313,6 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                // count.textContent = ` : (${ Number(cart.length )}) `;
                 
                 let arrayString = JSON.stringify(cart);
     
@@ -339,10 +325,8 @@ function renderImages(){
               }
 
            
-              bigTotal ++;
 
-              count.textContent = bigTotal;
-            
+              updateCounter()
 
         }
        
@@ -407,7 +391,6 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                // count.textContent = ` : (${ Number(cart.length )}) `;
 
             
                let arrayString = JSON.stringify(cart);
@@ -421,9 +404,7 @@ function renderImages(){
                 
               }
 
-              bigTotal ++;
-
-              count.textContent = bigTotal;
+              updateCounter()
 
          
          
@@ -446,24 +427,33 @@ function renderImages(){
    
     
 renderImages();
+ function updateCounter(){
 
+  cart = JSON.parse(localStorage.getItem('Products')) || [];
+  let itemsheader = 0;
+  console.log(cart.length);
+  for( let i =0 ; i < cart.length ; i++){
+    console.log(cart[i].quantity);
+    itemsheader += cart[i].quantity;
+    
+
+    
+
+   
+ }
+ count.textContent = itemsheader;
+
+ }
 
   function getproducts (){
 
-//    let data = localStorage.getItem('Products');
-  
-//    let productsData = JSON.parse(data);
-  
-//     if(productsData !== null){
-  
-//      cart = productsData;
-//      }
+
  
       cart = JSON.parse(localStorage.getItem('Products')) || [];
 
-
       for( let i =0 ; i < cart.length ; i++){
          new ProductForm(cart[i].name, cart[i].category, cart[i].price,  cart[i].path, cart[i].discreption);
+         
         names.push(cart[i].name)
       }
       }
@@ -492,7 +482,7 @@ renderImages();
 
       getproducts();
       getQuantity ();
-
+      updateCounter();
 
 
 
