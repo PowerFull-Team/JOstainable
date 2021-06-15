@@ -58,7 +58,7 @@ function ProductForm(name, category, price,  path, discreption) {
 ProductForm.allProduct = [];
 let productsData;
 
-new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'Made in 1980 to commemorate the Moscow Olympic Games.');
+new ProductForm('Camera', 'Unique', 150, '../img/camera1.jpeg', 'Made in 1980 to commemorate the Moscow Olympic Games.');
 new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg', ' Vintage Navigation compass Pocket Watch Style Case ');
 new ProductForm('Phonograph', 'Unique', 250, '../img/gramophone.jpg','Antique Phonograph');
 new ProductForm('Radio', 'Unique', 20, '../img/radio1.jpg','Antique Radio');
