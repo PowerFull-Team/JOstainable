@@ -13,6 +13,23 @@ let counter = 0;
 
 
 
+
+//  function for getting the new product from local storage:
+function gettingNewProduct() {
+  let stringOb=localStorage.getItem('newProducts');
+  let data=JSON.parse(stringOb);
+  if (data) {
+    
+    for (let i = 0; i < data.length; i++) {
+     let newOne= new ProductForm(data[i].name,data[i].category,data[i].price,data[i].path,data[i].discreption) ;
+      console.log(newOne);
+      
+    }
+  }
+}
+
+
+
 function ProductForm(name, category, price,  path, discreption) {
 
     this.name = name;
@@ -21,6 +38,7 @@ function ProductForm(name, category, price,  path, discreption) {
     this.path=path;
     this.discreption=discreption;
     // this.quantity =0;
+    console.log(this);
    
 
     ProductForm.allProduct.push(this);
@@ -168,13 +186,16 @@ function renderImages(){
   
 
     for(let i=0; i<ProductForm.allProduct.length; i++){
+      console.log(ProductForm.allProduct.length);
 
        if (ProductForm.allProduct[i].category==='Unique'){
+         console.log(ProductForm.allProduct[i].name);
        
 
         let h3= document.createElement('h3');
         first.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;
+        console.log(ProductForm.allProduct[i]);
 
         let image= document.createElement('img');
         first.appendChild(image);
@@ -293,7 +314,7 @@ function renderImages(){
               for (let j=0; j<cart.length; j++){
                   // console.log(cart[j],  ProductForm.allProduct[i])
                   if (cart[j].name==(ProductForm.allProduct[i]).name){
-                    // console.log('cart',cart)
+                    // console.log('cart',cart)+
                     cart[j].quantity++;
                     // console.log('not first time', cart[j].quantity)
     
@@ -426,10 +447,7 @@ function renderImages(){
     
 
 } 
-        
-
-
-   
+gettingNewProduct();
     
 renderImages();
 
@@ -478,6 +496,7 @@ renderImages();
 
       getproducts();
       getQuantity ();
+
 
 
 
