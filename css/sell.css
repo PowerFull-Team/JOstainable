@@ -198,7 +198,7 @@ span{
   
   .main-nav-item a:hover,
   .main-nav-item a:active {
-    border-bottom: 2px solid #fd9800 ;
+    border-bottom: 2px solid rgb(223, 198, 59) ;
   }
   
   label{
@@ -212,21 +212,24 @@ span{
   main{
     margin-bottom: 5%;
   }
+  body{
+    background-color: beige;
+  }
 
 
 
   h2{
     text-align: center;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Cairo', sans-serif;
     margin-bottom: 3%;
     font-size: 50px;
     margin-top: 5%;
-    color: rgb(255, 222, 37);
+        color: rgb(223, 198, 59);
   }
 
   .unique { 
+    font-family: 'Cairo', sans-serif;
     margin-left: 3%;
-    font-family: 'Acme', sans-serif;
     display: inline-block;
     text-align: center;
     padding-bottom: 20px;
@@ -234,9 +237,10 @@ span{
    }
 
  .ecoFriendly{
+  font-family: 'Cairo', sans-serif;
+
   margin-left: 3%;
 
-  font-family: 'Acme', sans-serif;
   display: inline-block;
   text-align: center;
 
@@ -244,8 +248,16 @@ span{
 
  .handmadeFashion{
   margin-left: 3%;
+  font-family: 'Cairo', sans-serif;
 
-  font-family: 'Acme', sans-serif;
   display: inline-block;
   text-align: center;
+ }
+
+ h3{
+   font-size: 30px;
+ }
+
+ main p{
+   color: rgb(24, 24, 24);
  }

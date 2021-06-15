@@ -109,7 +109,7 @@ body {
   
   .main-nav-item a:hover,
   .main-nav-item a:active {
-    border-bottom: 2px solid #fd9800 ;
+    border-bottom: 2px solid #bb7066 ;
   }
 
   /* footer */
@@ -196,6 +196,7 @@ footer {
 main h1{
     text-align: center;
     margin: 4%;
+    color:rgba(0, 0, 0, 0.6);
 
 }
 
