@@ -145,6 +145,7 @@ body {
   }
 
   .button {
+
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -153,7 +154,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 30px;
-    margin: 4px 2px;
+    margin: 4px 15px;
     cursor: pointer;
     margin-left: 620px;
     margin-top: 20px;
