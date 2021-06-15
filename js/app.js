@@ -1,6 +1,7 @@
 'use strict';
 let cart = [];
 let names=[];
+let bigTotal = 0;
 // let table=document.getElementById('cart');
 let butt= document.createElement('button');
 
@@ -231,7 +232,6 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : (${ Number(cart.length)}) `;
 
                 let arrayString = JSON.stringify(cart);
     
@@ -241,6 +241,14 @@ function renderImages(){
 
               
               }
+///////// 
+              // for (let k=0; k<cart.length; k++){
+              //   subTotal = cart[k].quantity;
+              //   console.log('total :' , subTotal)
+              // }
+              bigTotal ++;
+
+              count.textContent = bigTotal;
 
               
          
@@ -318,7 +326,7 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : (${ Number(cart.length )}) `;
+                // count.textContent = ` : (${ Number(cart.length )}) `;
                 
                 let arrayString = JSON.stringify(cart);
     
@@ -331,7 +339,9 @@ function renderImages(){
               }
 
            
-         
+              bigTotal ++;
+
+              count.textContent = bigTotal;
             
 
         }
@@ -397,7 +407,7 @@ function renderImages(){
 
                 cart.push(ProductForm.allProduct[i]);
 
-                count.textContent = ` : (${ Number(cart.length )}) `;
+                // count.textContent = ` : (${ Number(cart.length )}) `;
 
             
                let arrayString = JSON.stringify(cart);
@@ -410,6 +420,10 @@ function renderImages(){
               
                 
               }
+
+              bigTotal ++;
+
+              count.textContent = bigTotal;
 
          
          
