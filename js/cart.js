@@ -151,7 +151,7 @@ purchaseForm.addEventListener('submit',purchaseConfirm);
 function purchaseConfirm(event){
   event.preventDefault();
   localStorage.clear();
-  alert("Thank you for your purchas");
+  alert("Thank you for your purchase");
   location.reload();
   clearCart();
   }

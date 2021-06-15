@@ -32,7 +32,7 @@ function gettingNewProduct() {
     
     for (let i = 0; i < data.length; i++) {
      let newOne= new ProductForm(data[i].name,data[i].category,data[i].price,data[i].path,data[i].discreption) ;
-      console.log(newOne);
+      // console.log(newOne);
       
     }
   }
@@ -58,7 +58,7 @@ function ProductForm(name, category, price,  path, discreption) {
 ProductForm.allProduct = [];
 let productsData;
 
-new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'Made in 1980 to commemorate the Moscow Olympic Games.');
+new ProductForm('Camera', 'Unique', 150, '../img/camera1.jpeg', 'Made in 1980 to commemorate the Moscow Olympic Games.');
 new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg', ' Vintage Navigation compass Pocket Watch Style Case ');
 new ProductForm('Phonograph', 'Unique', 250, '../img/gramophone.jpg','Antique Phonograph');
 new ProductForm('Radio', 'Unique', 20, '../img/radio1.jpg','Antique Radio');
@@ -78,7 +78,7 @@ new ProductForm('Socks', 'Handmade Fashion', 7, '../img/socks.jpeg','Handmade wo
 
 let oldVersionArray = [... ProductForm.allProduct];
 
-console.log(oldVersionArray);
+// console.log(oldVersionArray);
 
 
 
@@ -207,7 +207,7 @@ function renderImages(){
   h2Hand.textContent = 'Handmade Fashion';
 
   
-    console.log(ProductForm.allProduct);
+    // console.log(ProductForm.allProduct);
     for(let i=0; i<ProductForm.allProduct.length; i++){
       // let newDiv = document.createElement('div');
        if (ProductForm.allProduct[i].category==='Unique'){
