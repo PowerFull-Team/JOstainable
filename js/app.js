@@ -59,7 +59,7 @@ function ProductForm(name, category, price,  path, discreption) {
 ProductForm.allProduct = [];
 let productsData;
 
-new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'This camera was made in 1980 to commemorate the Moscow Olympic Games.');
+new ProductForm('Camera', 'Unique', 15, '../img/camera1.jpeg', 'Made in 1980 to commemorate the Moscow Olympic Games.');
 new ProductForm('Compass', 'Unique', 35, '../img/compass.jpeg', ' Vintage Navigation compass Pocket Watch Style Case ');
 new ProductForm('Phonograph', 'Unique', 50, '../img/gramophone.jpg','Antique Phonograph');
 new ProductForm('Radio', 'Unique', 70, '../img/radio1.jpg','Antique Radio');
@@ -241,8 +241,9 @@ function renderImages(){
 
          
         let butt= document.createElement('button');
+        butt.setAttribute('class','butt');
         newDiv.appendChild(butt);
-        butt.textContent = 'addToCart';
+        butt.textContent = 'Add to Cart';
         first.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
@@ -252,7 +253,7 @@ function renderImages(){
            
             
       
-            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
+            if(event.target.textContent === 'Add to Cart' && names.includes(ProductForm.allProduct[i].name)){
            
               for (let j=0; j<cart.length; j++){
                 if (cart[j].name==(ProductForm.allProduct[i]).name){
@@ -335,14 +336,15 @@ function renderImages(){
 
          
         let butt= document.createElement('button');
+        butt.setAttribute('class','butt');
         newDiv.appendChild(butt);
-        butt.textContent = 'addToCart';
+        butt.textContent = 'Add to Cart';
         secound.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
          
             alert('Added To Cart');
-            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
+            if(event.target.textContent === 'Add to Cart' && names.includes(ProductForm.allProduct[i].name)){
               for (let j=0; j<cart.length; j++){
                   if (cart[j].name==(ProductForm.allProduct[i]).name){
                     cart[j].quantity++;
@@ -423,14 +425,15 @@ function renderImages(){
 
          
         let butt= document.createElement('button');
+        butt.setAttribute('class','butt');
         newDiv.appendChild(butt);
-        butt.textContent = 'addToCart';
+        butt.textContent = 'Add to Cart';
         third.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
             alert('Added To Cart');
 
-            if(event.target.textContent === 'addToCart' && names.includes(ProductForm.allProduct[i].name)){
+            if(event.target.textContent === 'Add to Cart' && names.includes(ProductForm.allProduct[i].name)){
 
               for (let j=0; j<cart.length; j++){
                 if (cart[j].name==(ProductForm.allProduct[i]).name){
@@ -461,7 +464,7 @@ function renderImages(){
                 
                 
                 counter = cart.length
-                count.textContent = ` : (${counter}) `;
+                count.textContent = `${counter}`;
                 
               
                 
