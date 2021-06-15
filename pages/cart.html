@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/cart.css">
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <h1 class="title-logo"><span>JO</span>stainable</h1>
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li class="main-nav-item"><a href="../index.html">Home</a></li>
-          <li class="main-nav-item"><a href="sell.html">Discover</a></li>
-          <li  class="main-nav-item"><a id = 'father' href="cart.html">Cart<span class="fa fa-shopping-cart"></span></a><span id="count1"></span></li>
-          <li class="main-nav-item"><a href="about-us.html">About us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-
-  <main>
-    <hr>
-    <h3>YOUR CART</h3>
-    <nav id="selectedItems">
-      <table id="cart">
-        <thead>
-          <tr>
-            <th>IMAGE</th>
-            <th>ITEM NAME</th>
-            <th>Quantity</th>
-            <th>PRICE</th>
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../css/cart.css">
+  </head>
+  
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title-logo"><span>JO</span>stainable</h1>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li class="main-nav-item"><a href="../index.html">Home</a></li>
+            <li class="main-nav-item"><a href="sell.html">Discover</a></li>
+            <li  class="main-nav-item"><a id = 'father' href="cart.html">Cart<span class="fa fa-shopping-cart"></span></a><span id="count1"></span></li>
+            <li class="main-nav-item"><a href="Exchange.html">Exchange</a></li>
+            <li class="main-nav-item"><a href="about-us.html">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    
+    <main>
+      <hr>
+      <h4>YOUR CART</h4>
+      <nav id="selectedItems">
+        <table id="cart">
+          <thead>
+            <tr>
+              <th>IMAGE</th>
+              <th>ITEM NAME</th>
+              <th>QUANTITY</th>
+              <th>PRICE</th>
             <th>REMOVE</th>
           </tr>
         </thead>
         <tbody></tbody>
         <tfoot></tfoot>
       </table>
-
-
+      
+      
+      <h5 id="totalCart">TOTAL : </h5>
     </nav>
+    <hr>
+    <!-- <div id="REMOVE"></div> -->
+    <h4>SHIPPING & PAYMENT</h4>
+    <div id="formBuyer">
+        <form id="purchaseForm">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Fist Name"><br><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+            <label for="email">E-MAIL:</label><br>
+            <input type="text" id="email" name="email" placeholder="someone@example.com"><br><br>
+            <label for="card">Card infos</label><br>
+            <input type="text" id="card" name="card" placeholder="00000-0000-000-0000"><br><br>
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address" placeholder="0000 - St. - Bldg.- City"><br><br>
+            <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="countryChoose">Choose Country</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Palestine">Palestine </option>
+          <option value="Turkey">Turkey</option>
+          <option value="Egypt">Egypt </option>
+          <option value="ksa">Saudi Arabia </option>
+          <option value="germany">Germany</option>
+    
+        </select>
+        <input type="submit" value="Confirm purchase" onclick="purchaseConfirm()">
+    
+            <!-- <button id="submit" onclick="purchaseConfirm()">Confirm purchase</button> -->
+        </form>
+      </div>
+  </nav>
+</main>
 
-    <h4 id="totalCart">TOTAL : </h4>
-    <div id="x"></div>
-<div id="formBuyer">
-    <form>
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" placeholder="Fist Name"><br><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
-        <label for="email">E-MAIL:</label><br>
-        <input type="text" id="email" name="email" placeholder="someone@example.com"><br><br>
-
-        <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="countryChoose">Choose Country</option>
-      <option value="Jordan">Jordan</option>
-      <option value="Palestine">Palestine </option>
-      <option value="Turkey">Turkey</option>
-      <option value="Egypt">Egypt </option>
-      <option value="ksa">Saudi Arabia </option>
-      <option value="germany">Germany</option>
-
-    </select>
-    <input type="submit" value="Confirm purchase" onclick="purchaseConfirm()">
-
-        <!-- <button id="submit" onclick="purchaseConfirm()">Confirm purchase</button> -->
-    </form>
-  </div>
-  </main>
-
-  <footer>
-    <h3 class="title-logo--footer">Follow<span>Us</span></h3>
-
-    <nav class="footer-nav">
-      <ul class="contact-us">
-        <li class="footer-nav-item"><span>E-mail address:</span> jostainable2021@JOstainable.com</li><br>
-        <li class="footer-nav-item"><span>Phone Number:</span> +962 687 457 992</li><br>
+<footer>
+  <h3 class="title-logo--footer">Follow<span>Us</span></h3>
+  
+  <nav class="footer-nav">
+    <ul class="contact-us">
+      <li class="footer-nav-item"><span>E-mail address:</span> jostainable2021@JOstainable.com</li><br>
+      <li class="footer-nav-item"><span>Phone Number:</span> +962 687 457 992</li><br>
         <li class="footer-nav-item"><span>Loction:</span> Amman - Jordan</li><br>
       </ul>
     </nav>
