@@ -66,31 +66,35 @@ function showCart() {
         
         let productTd = document.createElement('td');
         productTd.textContent =cartItems[i].name;
+        productTd.setAttribute('class','prodName');
         tr.appendChild(productTd);
         
         let productQuantity = document.createElement('td');
         productQuantity.textContent = cartItems[i].quantity;
+        productQuantity.setAttribute('class','prodQun');
         tr.appendChild(productQuantity);
 
         let priceTd = document.createElement('td');
+        priceTd.setAttribute('class','prodPrice');
         priceTd.textContent = cartItems[i].price * cartItems[i].quantity;
         tr.appendChild(priceTd);
 
 
         let deleteTd = document.createElement('td');
-        deleteTd.textContent = 'X';
+        deleteTd.setAttribute('class','btn');
+        deleteTd.textContent = 'REMOVE';
         deleteTd.id = i;
         tr.appendChild(deleteTd);
 
         counter += cartItems[i].price * cartItems[i].quantity;
         
-        bigTotal.textContent = counter;
+        bigTotal.textContent = `Total: ${counter} JOD`;
 
         
 
     }
     if (cartItems.length==0){
-      bigTotal.textContent=0
+      bigTotal.textContent=`Total: ${counter}`;
     }
     
 }
