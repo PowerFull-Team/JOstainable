@@ -73,7 +73,7 @@ function showCart() {
         tr.appendChild(productQuantity);
 
         let priceTd = document.createElement('td');
-        priceTd.textContent = cartItems[i].price * cartItems[i].quantity;
+        priceTd.textContent = `${cartItems[i].price * cartItems[i].quantity} JOD`;
         tr.appendChild(priceTd);
 
 
@@ -139,10 +139,21 @@ function renderCart() {
     showCart();
 }
 
-
-function purchaseConfirm(){
-
-  alert("Thank you for your purchas");
+let finalSubmit = document.getElementById('confirm');
+finalSubmit.addEventListener('submit', purchaseConfirm);
+function purchaseConfirm(event){
+  event.preventDefault();
+  localStorage.clear();
+  
+ alert('Thank you for your purchas');
+  
+  location.reload();
+ 
   clearCart();
+ 
+  
+
 }
+
+
 

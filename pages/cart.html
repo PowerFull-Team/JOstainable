@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/cart.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -54,7 +55,7 @@
     <h4 id="totalCart">TOTAL : </h4>
     <div id="x"></div>
 <div id="formBuyer">
-    <form>
+    <form id = 'confirm'>
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Fist Name"><br><br>
         <label for="lname">Last name:</label><br>
@@ -73,7 +74,7 @@
       <option value="germany">Germany</option>
 
     </select>
-    <input type="submit" value="Confirm purchase" onclick="purchaseConfirm()">
+    <input type="submit"  value="Confirm purchase" onclick="purchaseConfirm()">
 
         <!-- <button id="submit" onclick="purchaseConfirm()">Confirm purchase</button> -->
     </form>
