@@ -7,13 +7,23 @@
 }
 
 img{
-    width: 15%;
-    height: 220px;
+    width: 200px;
+    height: 200px;
   }
 
 /* main */
 
+.unique {
 
+display: inline-block;
+margin: auto;
+}
+
+P{
+
+  text-align: center;
+  text-size-adjust: 2px;
+}
 
 
 

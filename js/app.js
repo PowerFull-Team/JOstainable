@@ -19,7 +19,7 @@ let butt= document.createElement('button');
 let counter = 0;
  let father = document.getElementById('father');
  let count = document.getElementById('count');
- console.log('HI')
+//  console.log('HI')
 
 
 
@@ -33,7 +33,7 @@ function gettingNewProduct() {
     
     for (let i = 0; i < data.length; i++) {
      let newOne= new ProductForm(data[i].name,data[i].category,data[i].price,data[i].path,data[i].discreption) ;
-      console.log(newOne);
+      // console.log(newOne);
       
     }
   }
@@ -79,7 +79,7 @@ new ProductForm('Socks', 'Handmade Fashion', 100, '../img/socks.jpeg','Handmade 
 
 let oldVersionArray = [... ProductForm.allProduct];
 
-console.log(oldVersionArray);
+// console.log(oldVersionArray);
 
 
 
@@ -208,7 +208,7 @@ function renderImages(){
   h2Hand.textContent = 'Handmade Fashion';
 
   
-    console.log(ProductForm.allProduct);
+    // console.log(ProductForm.allProduct);
     for(let i=0; i<ProductForm.allProduct.length; i++){
       // let newDiv = document.createElement('div');
        if (ProductForm.allProduct[i].category==='Unique'){
@@ -220,7 +220,7 @@ function renderImages(){
         
         newDiv.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;
-        console.log(ProductForm.allProduct[i]);
+        // console.log(ProductForm.allProduct[i]);
 
         let image= document.createElement('img');
         newDiv.appendChild(image);
@@ -498,9 +498,9 @@ renderImages();
 
   cart = JSON.parse(localStorage.getItem('Products')) || [];
   let itemsheader = 0;
-  console.log(cart.length);
+  // console.log(cart.length);
   for( let i =0 ; i < cart.length ; i++){
-    console.log(cart[i].quantity);
+    // console.log(cart[i].quantity);
     itemsheader += cart[i].quantity;
     
 
