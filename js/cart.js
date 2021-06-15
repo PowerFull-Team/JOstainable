@@ -1,15 +1,28 @@
 'use strict'
 
-//let arr1=[];
+let count1 = document.getElementById('count1');
+let bigTotal = document.getElementById('totalCart');
+let counter1 = 0;
+
+function updateCounter(){
+
+  cart = JSON.parse(localStorage.getItem('Products')) || [];
+  let itemsheader = 0;
+  console.log(cart.length);
+  for( let i =0 ; i < cart.length ; i++){
+    console.log(cart[i].quantity);
+    itemsheader += cart[i].quantity;
+    
+  }
+  count1.textContent = itemsheader;
+}
+
+ updateCounter();
+
+
 
 let table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
-let cartSelect;
-
-let SelectedCart = function (items) {
-    // this.items is an array of CartItem instances.
-    this.items = items;
-  };
 
 let cartItems=[];
 
@@ -25,27 +38,20 @@ let Cart = function (name, category, price, path){
 
 Cart.allCart=[];
 
-new Cart('product1', 'latest', 15,'../img/scarf.jpeg');
-new Cart('product2', 'latest', 35,'../img/gramophone.jpg');
 
-// save to local Storage
-localStorage.setItem('cart',JSON.stringify(Cart.allCart));
 
 function loadCart(){
-    cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-   cartSelect = new SelectedCart(cartItems);
-   console.log(cartSelect);
-   console.log(cart);  
+    cartItems = JSON.parse(localStorage.getItem('Products')) || [];
+   console.log(cartItems);
 }
 loadCart();
 
 
-// render cart
 function showCart() {
-
+   
     let parent = document.getElementsByTagName('tbody')[0];
-
-    for (let i = 0; i <cartSelect.items.length; i++) {
+  console.log('cart', cartItems)
+    for (let i = 0; i <cartItems.length; i++) {
         let tr = document.createElement('tr');
         parent.appendChild(tr);
 
@@ -53,56 +59,79 @@ function showCart() {
         tr.appendChild(imageSrc);
         let image= document.createElement('img');
         
-        image.src = cartSelect.items[i].path;
+        image.src = cartItems[i].path;
         let Src = image.src;
         imageSrc.appendChild(image);
         image.textContent = Src;
         
         let productTd = document.createElement('td');
-        productTd.textContent =cartSelect.items[i].name;
+        productTd.textContent =cartItems[i].name;
         tr.appendChild(productTd);
+        
+        let productQuantity = document.createElement('td');
+        productQuantity.textContent = cartItems[i].quantity;
+        tr.appendChild(productQuantity);
 
         let priceTd = document.createElement('td');
-        priceTd.textContent = cartSelect.items[i].price;
+        priceTd.textContent = cartItems[i].price * cartItems[i].quantity;
         tr.appendChild(priceTd);
+
 
         let deleteTd = document.createElement('td');
         deleteTd.textContent = 'X';
+        deleteTd.id = i;
         tr.appendChild(deleteTd);
 
+        counter += cartItems[i].price * cartItems[i].quantity;
+        
+        bigTotal.textContent = counter;
+
+        
+
     }
+    if (cartItems.length==0){
+      bigTotal.textContent=0
+    }
+    
 }
 showCart();
 
-// remove item
+
 
 function removeItemFromCart(event) {
-  if (event.target.textContent === 'X') {
-    cartSelect.removeItem(event.target.id);
+  counter = 0;
+  console.log(event.target.id);
+  if (event.target.id ) {
+    removeItem(event.target.id);
+    
+
     console.log(event.target.textContent); 
     }
       
-  localStorage.setItem('cart',JSON.stringify(cartSelect.items));
-      renderCart();
+  
+      
   }
  
 function clearCart() {
 
     let parent = document.getElementsByTagName('tbody')[0];
+    console.log(parent);
     parent.textContent = '';
+  
+    
 }
 
 
-// Cart.prototype.saveToLocalStorage = function () {
-//    // save the contents of the cart to localStorage
-//     localStorage.setItem('cart',JSON.stringify(this.items))
-//   };
+
+
+function removeItem (id){
   
-SelectedCart.prototype.removeItem = function (item) {
-    //remove one item from the cart.
-    this.items.splice(item, 1);
-    //  localStorage.removeItem(item);
-  };
+  cartItems.splice(id,1);
+  localStorage.setItem('Products',JSON.stringify(cartItems));
+  updateCounter();
+
+  renderCart();
+}
   
 
 
@@ -112,16 +141,14 @@ function renderCart() {
     showCart();
 }
 
+let purchaseForm=document.getElementById('purchaseForm');
+purchaseForm.addEventListener('submit',purchaseConfirm);
 
-function purchaseConfirm(){
-
+function purchaseConfirm(event){
+  event.preventDefault();
+  localStorage.clear();
   alert("Thank you for your purchas");
+  location.reload();
   clearCart();
-}
+  }
 
-// var img = document.createElement("img");
- 
-// img.src = "../img/Antiques-in-Bundaberg.jpg";
-// var src = document.getElementById("x");
- 
-// src.appendChild(img);
