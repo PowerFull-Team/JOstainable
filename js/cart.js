@@ -156,3 +156,5 @@ function purchaseConfirm(event){
   clearCart();
   }
 
+
+
