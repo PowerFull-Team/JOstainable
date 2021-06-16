@@ -13,11 +13,11 @@ body {
   font-weight: 300;
   font-size: 20px;
   scroll-behavior: smooth;
-  background-color: #fff7f5;
+  background-color: #f7fff9;
   position: relative;
   }
   .fa-shopping-cart{
-      color:#d87867;
+      color:#b7d972 ;
     padding:-10px;
   }
 .fa{
@@ -31,10 +31,10 @@ body {
     border-radius: 5px;
   }
 
-  img{
+  /* img{
     width: 30%;
     height: 30%;
-  }
+  } */
   
   .fa:hover {
       opacity: 0.7;
@@ -58,7 +58,7 @@ body {
   header {
     font-family: 'Acme', sans-serif;
     height: 100px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
       /* url("../img/bghome.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@ body {
   .title-logo span,
   .title-logo--footer span {
     margin: 0 5px;
-    color: #d87867;
+    color: #b7d972 ;
     transition: transform 0.25s;
     
   }
@@ -109,7 +109,7 @@ body {
   
   .main-nav-item a:hover,
   .main-nav-item a:active {
-    border-bottom: 2px solid #bb7066 ;
+    border-bottom: 2px solid #b7d972 ;
   }
 
   /* footer */
@@ -192,37 +192,42 @@ footer {
   }
   
   span{
-    color: #d87867;
+    color: #b7d972 ;
   }
  
 
   /* main */
 main h1{
     text-align: center;
-    margin: 4%;
+    margin-top: 2% ;
     color:rgba(0, 0, 0, 0.6);
 
 }
 
 main p{
     text-align: center;
-    margin: 5%;
-    color: #f0523d;
-    font-size:x-large;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: #8fb445;
+    font-size:25px;
+    width: 60%;
 }
 main{
-    margin-bottom: 5%;
+    margin-bottom: 6%;
 
 }
 
 #exchangeProductForm{
-    border: 5px solid #ffeeeb;
+    border: 5px solid #8fb445;
     width: 90%;
     margin-top: 7%;
+    background-color: #e4f3c2 ;
     margin-bottom: 10%;
     padding: 4%;
     border-radius: 3%;;
     display: flex;
+    color: rgba(0, 0, 0, 0.8);
     margin: auto;
     flex-wrap: wrap;
     align-content: center;
@@ -268,11 +273,11 @@ input[type=text], select {
 
 
   input[type=submit] {
-    background-color:#f0523d;
+    background-color:#faab34;
     color: white;
-    padding: 12px 20px;
+    padding: 20px 20px;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 4px;
     cursor: pointer;
     width: 30%;
@@ -285,7 +290,7 @@ input[type=text], select {
 
   
 input[type=submit]:hover {
-    background-color: #e01a1a;
+    background-color: #bd770f;
   }
 
  
