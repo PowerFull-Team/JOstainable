@@ -193,7 +193,7 @@ footer {
 .copy-rights {
   width: 90%;
   text-align: center;
-  margin-top: 97px;
+  margin-top: 90px;
   margin-left: 60px;
 }
 .aboutus-bar{
@@ -211,6 +211,10 @@ footer {
   margin-top: 30px;
   margin-left: 20px;
   text-align: center;
+}
+.contact-us{
+  clear: both;
+  margin-left: 10px;
 }
 
 .contactus-bar-list {

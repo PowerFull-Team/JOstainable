@@ -67,7 +67,7 @@ new ProductForm('Typewriter', 'Unique', 400, '../img/typeWriter2.jpg','Anitque t
 new ProductForm('Green Bag ', 'Eco-friendly', 6, '../img/greenBag1.jpeg','A resusable bag for your shopping ');
 new ProductForm('Recycling Trash', 'Eco-friendly', 20, '../img/greenBox.jpeg',' A set of 4-boxes for paper, glass, plastic, & metal trash ');
 new ProductForm('Recycled Notebook', 'Eco-friendly', 7, '../img/notebook.jpeg','A set of recycled strings and notebook ');
-new ProductForm('Toothbrush', 'Eco-friendly', 5, '../img/toothbrush.jpeg','A set of 5 recycled based toothbrushes and recycled bath accessories ');
+new ProductForm('Toothbrush', 'Eco-friendly', 5, '../img/toothbrush.jpeg','A set of 5 recycled based toothbrushes & recycled bath accessories ');
 new ProductForm('Bottle Light','Eco-friendly', 5, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
 
 new ProductForm('Baby Set', 'Handmade Fashion', 25, '../img/babyClothing.jpeg','A set of 3-pieces for youe kid ');
@@ -234,6 +234,7 @@ function renderImages(){
 
          
         let price= document.createElement('p');
+        price.setAttribute('class','prodPrice');
         newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 
@@ -282,7 +283,7 @@ function renderImages(){
                 cart.push(ProductForm.allProduct[i]);
 
                 counter = cart.length
-                count.textContent = ` : (${counter}) `;
+                count.textContent = `${counter}`;
                 
 
                 let arrayString = JSON.stringify(cart);
@@ -334,6 +335,7 @@ function renderImages(){
 
          
         let price= document.createElement('p');
+        price.setAttribute('class','prodPrice');
         newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 
@@ -345,8 +347,13 @@ function renderImages(){
         secound.appendChild(newDiv);
         butt.addEventListener('click', submit);
         function submit(event){
-         
-            alert('Added To Cart');
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Added to cart',
+            showConfirmButton: false,
+            timer: 1500
+          });
             if(event.target.textContent === 'Add to Cart' && names.includes(ProductForm.allProduct[i].name)){
               for (let j=0; j<cart.length; j++){
                   if (cart[j].name==(ProductForm.allProduct[i]).name){
@@ -378,7 +385,7 @@ function renderImages(){
                 cart.push(ProductForm.allProduct[i]);
                 
                 counter = cart.length
-                count.textContent = ` : (${counter}) `;
+                count.textContent = `${counter} `;
                 
              
                 let arrayString = JSON.stringify(cart);
@@ -423,6 +430,7 @@ function renderImages(){
 
          
         let price= document.createElement('p');
+        price.setAttribute('class','prodPrice');
         newDiv.appendChild(price);
         price.textContent =`Price: ${ProductForm.allProduct[i].price} JOD`;
 

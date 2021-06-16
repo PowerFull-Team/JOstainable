@@ -67,6 +67,6 @@ function ExchangeConfirm(event){
       no-repeat
     `
   })
-
+  document.getElementById('exchangeProductForm').reset();
 
 }

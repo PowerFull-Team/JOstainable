@@ -147,7 +147,7 @@ body {
 
   .button {
 
-    background-color: #4CAF50;
+    background-color: #f19813;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -171,7 +171,7 @@ body {
     padding: 3% 0 4% 0;
   }
   .aboutProject-bar {
-    color: rgb(0, 56, 102);
+    color: #3e8e41;
     text-align: center;
     font-size: 250%;
     font-weight: 200;
@@ -181,7 +181,7 @@ body {
   
   .section-heading00 span {
     margin: 0 5px;
-    color: #1a768d;
+    color: #fd9800;
     transition: transform 0.3s;
     
   }
@@ -197,8 +197,8 @@ body {
    .prof-info{
     background-color: #f5fafc;
     width: 1150px;
-    color:#3271ad ;
-    border: 3px solid #3271ad;
+    color:#3e8e41 ;
+    border: 3px solid #3e8e41;
     padding: 50px;
     margin: auto;
     font-size: 25px;
@@ -258,7 +258,7 @@ footer {
 .copy-rights {
   width: 90%;
   text-align: center;
-  margin-top: 97px;
+  margin-top: 90px;
   margin-left: 60px;
 }
 
@@ -269,7 +269,10 @@ footer {
   margin-left: 20px;
   text-align: center;
 }
-
+.contact-us{
+  clear: both;
+  margin-left: 10px;
+}
 .contactus-bar-list {
   list-style: none;
 }

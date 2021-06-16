@@ -14,7 +14,6 @@ img{
 /* footer */
 footer {
   font-family: 'Acme', sans-serif;
-height: 130px;
   width: 100%;
   padding: 30px 0 10px 0;
   background-color: #202020  ;
@@ -30,6 +29,10 @@ height: 130px;
 .footer-nav {
   float: left;
   margin-right: 25px;
+}
+.contact-us{
+  clear: both;
+  margin-left: 10px;
 }
 
 .footer-nav-list {
@@ -55,14 +58,14 @@ height: 130px;
 
 .copy-rights,
 .contactus-bar {
-  font-size: 80%;
+  font-size: 90%;
   font-weight: 200;
 }
 
 .copy-rights {
   width: 90%;
   text-align: center;
-  margin-top: 97px;
+  margin-top: 90px;
   margin-left: 60px;
 }
 
@@ -89,11 +92,12 @@ footer{
 }
 
 span{
-  color: #b7d972;
+  color: rgb(223, 198, 59);
 }
 
 
   .fa-shopping-cart{
+    color: rgb(223, 198, 59);
     padding:-10px;
   }
   .fa{
@@ -155,7 +159,7 @@ span{
   .title-logo span,
   .title-logo--footer span {
     margin: 0 5px;
-    color: #b7d972;
+    color: rgb(223, 198, 59);
     transition: transform 0.25s;
     
   }
@@ -202,28 +206,61 @@ span{
   }
   
   label{
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Acme', sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    margin-left: 20px;
 
   }
-  #filterForm{
-    padding: 15px;
+  #filterForm label{
+    padding: 50px;
+
   }
+  #count{
+    color: rgb(223, 198, 59);
+  }
+  #filterForm{
+    padding: 30px;
+    width: 90%;
+    margin: auto;
+    
+  }
+  fieldset select{
+    margin-left: 20px;
+    width: 35%;
+  }
+
   main{
     margin-bottom: 5%;
   }
   body{
-    background-color: beige;
+  background-color: beige;
+  }
+  body footer{
+    font-family: 'Acme', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  position: relative;
   }
 
-
+  select {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
 
   h2{
     text-align: center;
     font-family: 'Cairo', sans-serif;
     margin-bottom: 3%;
     font-size: 50px;
-    margin-top: 5%;
+    margin-top: 2%;
         color: rgb(223, 198, 59);
   }
 
@@ -233,7 +270,6 @@ span{
     display: inline-block;
     text-align: center;
     padding-bottom: 20px;
-
    }
 
  .ecoFriendly{
@@ -254,10 +290,17 @@ span{
   text-align: center;
  }
 
- h3{
+ main h3{
    font-size: 30px;
+   margin-top: 5%;
+   color:rgb(26, 23, 23);
  }
 
  main p{
-   color: rgb(24, 24, 24);
+   color: rgb(94, 91, 91);
+   font-size: 17px;
+ }
+ .prodPrice{
+  color: rgb(26, 23, 23);
+  font-size: 17px;
  }
