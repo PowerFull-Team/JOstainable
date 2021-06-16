@@ -129,7 +129,8 @@ function clearCart() {
 
 
 function removeItem (id){
-  
+  Swal.fire('Item Removed from the Cart!')
+
   cartItems.splice(id,1);
   localStorage.setItem('Products',JSON.stringify(cartItems));
   updateCounter();
@@ -151,10 +152,26 @@ purchaseForm.addEventListener('submit',purchaseConfirm);
 function purchaseConfirm(event){
   event.preventDefault();
   localStorage.clear();
-  alert("Thank you for your purchas");
-  location.reload();
-  clearCart();
-  }
+  Swal.fire({
+    title: 'Confirm the order? ',
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: `Yes`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire("Thank you for your purchas")
+      counter = 0;
+      bigTotal.textContent = counter;
+      count1.textContent = counter;
+      document.getElementById('purchaseForm').reset();
+    
+      clearCart();
+    } else if (result.isDenied) {
+      Swal.fire('Purchase Canceled! ')
+    }
+  })
+}
 
 
 
