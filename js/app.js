@@ -32,7 +32,7 @@ function gettingNewProduct() {
     
     for (let i = 0; i < data.length; i++) {
      let newOne= new ProductForm(data[i].name,data[i].category,data[i].price,data[i].path,data[i].discreption) ;
-      console.log(newOne);
+      // console.log(newOne);
       
     }
   }
@@ -78,7 +78,7 @@ new ProductForm('Socks', 'Handmade Fashion', 7, '../img/socks.jpeg','Handmade wo
 
 let oldVersionArray = [... ProductForm.allProduct];
 
-console.log(oldVersionArray);
+// console.log(oldVersionArray);
 
 
 
@@ -207,7 +207,7 @@ function renderImages(){
   h2Hand.textContent = 'Handmade Fashion';
 
   
-    console.log(ProductForm.allProduct);
+    // console.log(ProductForm.allProduct);
     for(let i=0; i<ProductForm.allProduct.length; i++){
       // let newDiv = document.createElement('div');
        if (ProductForm.allProduct[i].category==='Unique'){
