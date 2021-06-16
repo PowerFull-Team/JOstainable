@@ -67,7 +67,7 @@ new ProductForm('Typewriter', 'Unique', 400, '../img/typeWriter2.jpg','Anitque t
 new ProductForm('Green Bag ', 'Eco-friendly', 6, '../img/greenBag1.jpeg','A resusable bag for your shopping ');
 new ProductForm('Recycling Trash', 'Eco-friendly', 20, '../img/greenBox.jpeg',' A set of 4-boxes for paper, glass, plastic, & metal trash ');
 new ProductForm('Recycled Notebook', 'Eco-friendly', 7, '../img/notebook.jpeg','A set of recycled strings and notebook ');
-new ProductForm('Toothbrush', 'Eco-friendly', 5, '../img/toothbrush.jpeg','A set of 5 recycled based toothbrushes & recycled bath accessories ');
+new ProductForm('Toothbrush', 'Eco-friendly', 5, '../img/toothbrush.jpeg','Toothbrushes & recycled bath accessories ');
 new ProductForm('Bottle Light','Eco-friendly', 5, '../img/waterBottleLight.jpg','A set of 3-recycled bottles used with lighting art ');
 
 new ProductForm('Baby Set', 'Handmade Fashion', 25, '../img/babyClothing.jpeg','A set of 3-pieces for youe kid ');
@@ -319,6 +319,7 @@ function renderImages(){
         let newDiv = document.createElement('div');
         newDiv.setAttribute('class','ecoFriendly');
         newDiv.setAttribute('id',incript(ProductForm.allProduct[i].name));
+        
         let h3= document.createElement('h3');
         newDiv.appendChild(h3);
         h3.textContent = ProductForm.allProduct[i].name;

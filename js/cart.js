@@ -160,7 +160,7 @@ function purchaseConfirm(event){
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      Swal.fire("Thank you for your purchas")
+      Swal.fire("Thank you for your purchase")
       counter = 0;
       bigTotal.textContent = counter;
       count1.textContent = counter;

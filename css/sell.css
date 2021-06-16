@@ -5,6 +5,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+#Camera, #Compass, #Phonograph {
+  background-color: #e7f3d0;
+}
+
+#Radio,#Typewriter, #ecoBag{
+  background-color: #e7f3d0;
+  margin-top: 20px;
+}
+#GreenBag, #RecyclingTrash, #RecycledNotebook{
+  background-color: #e7f3d0;
+}
+
+#Toothbrush, #BottleLight{
+  background-color: #e7f3d0;
+  margin-top: 20px;
+
+}
+#BabySet, #HandmadeBag,#HandmadeBracelet{
+  background-color: #e7f3d0;
+}
+
+#HandmadeScarf,#Socks{
+  background-color: #e7f3d0;
+  margin-top: 20px;
+}
+
+h1{
+  font-size: 40px;
+}
+
 /* 
 img{
     width: 15%;
@@ -92,12 +122,12 @@ footer{
 }
 
 span{
-  color: rgb(223, 198, 59);
+  color: #b7d972;
 }
 
 
   .fa-shopping-cart{
-    color: rgb(223, 198, 59);
+    color: #b7d972;
     padding:-10px;
   }
   .fa{
@@ -159,13 +189,13 @@ span{
   .title-logo span,
   .title-logo--footer span {
     margin: 0 5px;
-    color: rgb(223, 198, 59);
+    color: #b7d972;
     transition: transform 0.25s;
     
   }
 
   .butt{
-    background-color: #4c98af;
+    background-color: #faab34;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -202,7 +232,7 @@ span{
   
   .main-nav-item a:hover,
   .main-nav-item a:active {
-    border-bottom: 2px solid rgb(223, 198, 59) ;
+    border-bottom: 2px solid #b7d972 ;
   }
   
   label{
@@ -217,7 +247,7 @@ span{
 
   }
   #count{
-    color: rgb(223, 198, 59);
+    color: #b7d972;
   }
   #filterForm{
     padding: 30px;
@@ -234,7 +264,7 @@ span{
     margin-bottom: 5%;
   }
   body{
-  background-color: beige;
+  background-color: #f7fff9;
   }
   body footer{
     font-family: 'Acme', sans-serif;
@@ -261,7 +291,7 @@ span{
     margin-bottom: 3%;
     font-size: 50px;
     margin-top: 2%;
-        color: rgb(223, 198, 59);
+        color: #202020;
   }
 
   .unique { 
@@ -271,11 +301,13 @@ span{
     text-align: center;
     padding-bottom: 20px;
    }
+   
 
  .ecoFriendly{
   font-family: 'Cairo', sans-serif;
 
   margin-left: 3%;
+  padding-bottom: 20px;
 
   display: inline-block;
   text-align: center;
@@ -285,6 +317,7 @@ span{
  .handmadeFashion{
   margin-left: 3%;
   font-family: 'Cairo', sans-serif;
+  padding-bottom: 20px;
 
   display: inline-block;
   text-align: center;
